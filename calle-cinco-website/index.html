@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calle Cinco Driving School in Kelowna - Patient, professional driving lessons to help you pass your ICBC road test with confidence. Open 7 days a week.">
+    <meta name="keywords" content="driving school Kelowna, driving lessons Kelowna, ICBC road test preparation, driving instructor Kelowna, learn to drive">
+    <meta name="author" content="Calle Cinco Driving School">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://callecinco.ca/">
+    <meta property="og:title" content="Calle Cinco Driving School | Kelowna Driving Lessons">
+    <meta property="og:description" content="Patient, professional driving instruction in Kelowna. ICBC road test preparation. Open 7 days a week.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=630&fit=crop">
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Calle Cinco Driving School",
+      "image": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000",
+      "description": "Professional driving lessons and ICBC road test preparation in Kelowna, BC",
+      "telephone": "(250) 300-0552",
+      "email": "drive@callecinco.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kelowna, BC",
+        "addressLocality": "Kelowna",
+        "addressRegion": "BC",
+        "postalCode": "V1Y",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.8844",
+        "longitude": "-119.4960"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "15:00"
+        }
+      ],
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.facebook.com/callecinco",
+        "https://www.instagram.com/callecinco"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "127"
+      }
+    }
+    </script>
+
+    <title>Calle Cinco Driving School | Kelowna Driving Lessons & ICBC Road Test Prep</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23F59E0B'/><text x='50' y='65' font-size='60' font-weight='bold' text-anchor='middle' fill='%23000'>C5</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="images/calle-cinco-logo.png" alt="Calle Cinco Logo" class="logo-img">
+                    <span class="logo-text">Calle Cinco</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact" class="cta-nav">Book Now</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#packages">Packages</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="cta-mobile">Book Your Lesson</a>
+    </div>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" onclick="scrollToBooking()">
+        📞 Book Lesson
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background" style="background-image: url('images/open-road.jpg');">
+
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Driving Lessons That Help You Pass With Confidence</h1>
+            <p class="hero-subtitle">Patient, professional instruction in Kelowna — designed to help you become a safe, confident driver and pass your ICBC road test</p>
+            
+            <div class="hero-ctas">
+                <button class="btn btn-primary" onclick="scrollToBooking()">Book Your First Lesson</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('packages').scrollIntoView({behavior: 'smooth'})">View Lesson Packages</button>
+            </div>
+
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span class="trust-icon">✓</span>
+                    <span>Open 7 Days a Week</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">✓</span>
+                    <span>Patient & Experienced Instructors</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">✓</span>
+                    <span>ICBC Road Test Preparation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p class="section-subtitle">Three simple steps to becoming a confident driver</p>
+            
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Book Your Lesson</h3>
+                    <p>Choose a time that works for you. We're open 7 days a week with flexible scheduling to fit your needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Learn With a Patient Instructor</h3>
+                    <p>Work one-on-one with an experienced, patient instructor who understands your learning style and builds your confidence.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Pass Your Road Test With Confidence</h3>
+                    <p>Master the skills you need to safely pass your ICBC road test and become a confident driver for life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lesson Packages -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2>Lesson Packages</h2>
+            <p class="section-subtitle">Choose the package that fits your needs</p>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Single Lesson</h3>
+                    <div class="price">$90</div>
+                    <p class="duration">90 minutes</p>
+                    <ul class="features">
+                        <li>✓ One-on-one instruction</li>
+                        <li>✓ Flexible scheduling</li>
+                        <li>✓ Personalized feedback</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="scrollToBooking()">Book Now</button>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>3-Lesson Package</h3>
+                    <div class="price">$265</div>
+                    <p class="duration">3 × 90 minutes</p>
+                    <ul class="features">
+                        <li>✓ Build consistency</li>
+                        <li>✓ Progress tracking</li>
+                        <li>✓ Save $5 per lesson</li>
+                        <li>✓ Flexible scheduling</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="scrollToBooking()">Book Now</button>
+                </div>
+
+                <div class="package-card">
+                    <h3>7-Lesson Package</h3>
+                    <div class="price">$620</div>
+                    <p class="duration">7 × 90 minutes</p>
+                    <ul class="features">
+                        <li>✓ Comprehensive training</li>
+                        <li>✓ Save $10 per lesson</li>
+                        <li>✓ Road test prep included</li>
+                        <li>✓ Personalized plan</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="scrollToBooking()">Book Now</button>
+                </div>
+
+                <div class="package-card">
+                    <h3>11-Lesson Package</h3>
+                    <div class="price">$1,040</div>
+                    <p class="duration">11 × 90 minutes + Test Car</p>
+                    <ul class="features">
+                        <li>✓ Complete road test prep</li>
+                        <li>✓ Use our car for test</li>
+                        <li>✓ Save $15 per lesson</li>
+                        <li>✓ Highest success rate</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="scrollToBooking()">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-note">
+                <p><strong>Road Test Car Rental:</strong> Available for students who need to use our vehicle for their ICBC road test.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews & Testimonials -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <p class="section-subtitle">Join hundreds of confident drivers who passed with Calle Cinco</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I was so nervous about my road test, but the instructors at Calle Cinco made me feel comfortable and confident. I passed on my first try!"</p>
+                    <p class="review-author">— Sarah M., Kelowna</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Patient and knowledgeable instructors. They really took the time to understand my learning style and helped me improve my skills quickly."</p>
+                    <p class="review-author">— James T., Kelowna</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Great for nervous drivers! The instructors are so encouraging and supportive. I felt ready for my test after just a few lessons."</p>
+                    <p class="review-author">— Emma R., Kelowna</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Professional, friendly, and effective. Calle Cinco helped me go from terrified to confident behind the wheel. Highly recommend!"</p>
+                    <p class="review-author">— Michael K., Kelowna</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The best driving school in Kelowna. They know all the test routes and gave me practical tips that made a real difference."</p>
+                    <p class="review-author">— Jessica L., Kelowna</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Flexible scheduling made it easy to fit lessons into my busy life. The instructors are patient and never make you feel rushed."</p>
+                    <p class="review-author">— David P., Kelowna</p>
+                </div>
+            </div>
+
+            <div class="review-stats">
+                <div class="stat">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">127+</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">First-Try Pass Rate</div>
+                </div>
+            </div>
+
+            <div class="awards-section">
+                <h3>Awards & Recognition</h3>
+                <div class="awards-grid">
+                    <div class="award-placeholder">
+                        <div class="award-icon">🏆</div>
+                        <p>Best Driving School</p>
+                        <p class="award-year">[Add Your Award]</p>
+                    </div>
+                    <div class="award-placeholder">
+                        <div class="award-icon">⭐</div>
+                        <p>Top Rated Instructor</p>
+                        <p class="award-year">[Add Your Award]</p>
+                    </div>
+                    <div class="award-placeholder">
+                        <div class="award-icon">✓</div>
+                        <p>ICBC Certified</p>
+                        <p class="award-year">[Add Your Award]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Calle Cinco Driving School</h2>
+                    <p>Calle Cinco's passion is teaching! We believe that learning to drive should be a positive, supportive experience that builds confidence and safety.</p>
+                    
+                    <h3>Our Approach</h3>
+                    <ul class="about-list">
+                        <li><strong>Patient Instruction:</strong> We understand that every student learns differently. Our instructors take the time to work at your pace.</li>
+                        <li><strong>Personalized Learning:</strong> Each lesson is tailored to your specific needs and goals, whether you're a nervous beginner or refining advanced skills.</li>
+                        <li><strong>Safety First:</strong> We emphasize responsible driving habits and safety practices that will serve you for life.</li>
+                        <li><strong>Proven Results:</strong> Our students have a 94% first-try pass rate on their ICBC road test.</li>
+                    </ul>
+
+                    <h3>Our Instructors</h3>
+                    <p>Our team of experienced, patient instructors are dedicated to helping you succeed. They know Kelowna's roads and ICBC test routes inside and out, giving you the local knowledge you need to pass with confidence.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/checklist.jpg" alt="Driving school checklist">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our driving lessons</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How many lessons do I need?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most students need between 5-15 lessons depending on their experience level and comfort with driving. We recommend starting with a 3-lesson package to assess your needs, then adjusting from there. Our instructors will provide personalized recommendations based on your progress.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you provide a vehicle for lessons?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We provide a fully equipped dual-control vehicle for all lessons. This means you can focus on learning without worrying about insurance or vehicle issues. Our cars are well-maintained and equipped with the latest safety features.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I use your car for my ICBC road test?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our 11-lesson package includes the use of our vehicle for your ICBC road test. We also offer road test car rental for students who have completed their lessons with us. This gives you the advantage of practicing in the exact vehicle you'll be tested in.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you work with nervous or beginner drivers?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We specialize in working with nervous and beginner drivers. Our instructors are patient and understanding, and we create a supportive environment where you can learn at your own pace. Many of our students come to us feeling anxious, and they leave feeling confident and ready for their road test.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What is your cancellation policy?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We ask for 24 hours notice for cancellations or rescheduling. If you need to cancel with less notice, we may charge a cancellation fee. We're flexible and understand that life happens, so please contact us as soon as possible if you need to reschedule.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are you open on weekends?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We're open 7 days a week to fit your schedule. Saturday: 8am-7pm, Sunday: 8am-3pm, and Monday-Friday: 7am-8pm. We also offer flexible scheduling, so you can book lessons at times that work best for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local SEO Section -->
+    <section class="local-seo">
+        <div class="container">
+            <h2>Serving Kelowna & the Okanagan</h2>
+            <p class="section-subtitle">Professional driving lessons throughout the Kelowna area</p>
+            
+            <div class="local-content">
+                <div class="local-item">
+                    <h3>Kelowna Road Test Preparation</h3>
+                    <p>We specialize in ICBC road test preparation with in-depth knowledge of Kelowna's test routes. Our instructors know exactly what examiners are looking for and prepare you for success.</p>
+                </div>
+                <div class="local-item">
+                    <h3>Local Knowledge</h3>
+                    <p>Driving in Kelowna has unique challenges—from mountain roads to busy downtown streets. We prepare you for all conditions you'll encounter on your road test and beyond.</p>
+                </div>
+                <div class="local-item">
+                    <h3>Serving the Okanagan</h3>
+                    <p>While based in Kelowna, we serve students throughout the Okanagan region. Contact us to discuss lessons in your area.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="contact" class="booking">
+        <div class="container">
+            <h2>Ready to Start Driving With Confidence?</h2>
+            <p class="section-subtitle">Book your first lesson today</p>
+            
+            <div class="booking-wrapper">
+                <div class="booking-form">
+                    <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your experience (optional)</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Book Your First Lesson</button>
+                        <p class="form-note">We respond quickly and offer flexible scheduling</p>
+                    </form>
+                </div>
+
+                <div class="booking-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+12503000552">(250) 300-0552</a></p>
+                            <p class="contact-note">Call or text anytime</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:drive@callecinco.ca">drive@callecinco.ca</a></p>
+                            <p class="contact-note">We respond within 2 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Kelowna, British Columbia</p>
+                            <p class="contact-note">Serving the Okanagan region</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon-Fri: 7am - 8pm</p>
+                            <p>Sat: 8am - 7pm</p>
+                            <p>Sun: 8am - 3pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Calle Cinco Driving School</h4>
+                    <p>Professional driving lessons in Kelowna. ICBC road test preparation. Open 7 days a week.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Phone: <a href="tel:+12503000552">(250) 300-0552</a></p>
+                    <p>Email: <a href="mailto:drive@callecinco.ca">drive@callecinco.ca</a></p>
+                    <p>Location: Kelowna, BC</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/callecinco" target="_blank">Facebook</a>
+                        <a href="https://instagram.com/callecinco" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Calle Cinco Driving School. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

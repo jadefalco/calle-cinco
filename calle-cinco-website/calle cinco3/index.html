@@ -1,0 +1,319 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { CheckCircle2, Users, Award, MapPin, Phone, Mail } from "lucide-react";
+
+/**
+ * Design Philosophy: Modern Professional
+ * Color Scheme: Teal (#0D5F6F) + Amber (#F59E0B)
+ * Typography: Poppins (headings) + Inter (body)
+ * Layout: Asymmetric hero, alternating content blocks, feature grid
+ */
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
+        <div className="container flex items-center justify-between py-4">
+          <div className="text-2xl font-bold text-teal-900">
+            Kelowna Driving School
+          </div>
+          <div className="hidden md:flex gap-8 items-center">
+            <a href="#services" className="text-gray-700 hover:text-teal-700 transition">Services</a>
+            <a href="#testimonials" className="text-gray-700 hover:text-teal-700 transition">Reviews</a>
+            <a href="#contact" className="text-gray-700 hover:text-teal-700 transition">Contact</a>
+            <Button className="bg-teal-700 hover:bg-teal-800 text-white">Book Now</Button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="container py-20 grid md:grid-cols-2 gap-12 items-center">
+          {/* Left: Text Content */}
+          <div className="space-y-6">
+            <div className="inline-block bg-amber-50 px-4 py-2 rounded-full">
+              <span className="text-amber-900 text-sm font-semibold">Professional Driving Instruction</span>
+            </div>
+            <h1 className="text-teal-900 leading-tight">
+              Drive with Confidence
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Expert instruction in Kelowna designed to help you become a safe, confident driver. Pass your ICBC road test on your first try.
+            </p>
+            <div className="flex gap-4 pt-4">
+              <Button size="lg" className="bg-teal-700 hover:bg-teal-800 text-white">
+                Book Your First Lesson
+              </Button>
+              <Button size="lg" variant="outline" className="border-teal-700 text-teal-700 hover:bg-teal-50">
+                Learn More
+              </Button>
+            </div>
+          </div>
+
+          {/* Right: Hero Image */}
+          <div className="relative h-96 md:h-full rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663514698705/j97qjSjrfUVhfGxAfGUapr/hero-student-driver-VtRagWtVjoYKkASdW8mpYU.webp"
+              alt="Student driver"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-teal-900 mb-4">Why Choose Us</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              We combine proven teaching methods with personalized instruction to help you succeed
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: CheckCircle2,
+                title: "Expert Instructors",
+                description: "Certified, patient professionals with years of experience teaching nervous and confident drivers alike."
+              },
+              {
+                icon: Award,
+                title: "High Pass Rate",
+                description: "Our students pass their ICBC road test at a significantly higher rate than the provincial average."
+              },
+              {
+                icon: Users,
+                title: "Flexible Scheduling",
+                description: "Lessons available 7 days a week, with flexible times to fit your busy schedule."
+              }
+            ].map((benefit, idx) => {
+              const Icon = benefit.icon;
+              return (
+                <Card key={idx} className="p-8 hover:shadow-lg transition-shadow duration-300 border-0 bg-white">
+                  <div className="mb-4">
+                    <Icon className="w-12 h-12 text-amber-500" />
+                  </div>
+                  <h3 className="text-teal-900 mb-3">{benefit.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="text-teal-900 mb-6">Our Services</h2>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                We offer comprehensive driving instruction tailored to your needs, whether you're a complete beginner or preparing for your road test.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "G1 to G2 Preparation (30 hours minimum)",
+                  "G2 to G Road Test Preparation",
+                  "Highway and City Driving",
+                  "Defensive Driving Techniques",
+                  "Nervous Driver Coaching"
+                ].map((service, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{service}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663514698705/j97qjSjrfUVhfGxAfGUapr/instructor-teaching-9WgJPGQqZ4hXhXzkWgYtYo.webp"
+                alt="Driving lesson"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="bg-gradient-to-br from-teal-50 to-teal-100 py-20">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-teal-900 mb-4">Flexible Packages</h2>
+            <p className="text-gray-700 text-lg">Choose the package that fits your needs</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Starter",
+                hours: "5 Hours",
+                price: "$199",
+                description: "Perfect for getting comfortable behind the wheel"
+              },
+              {
+                name: "Standard",
+                hours: "15 Hours",
+                price: "$549",
+                description: "Most popular - comprehensive preparation",
+                featured: true
+              },
+              {
+                name: "Premium",
+                hours: "30 Hours",
+                price: "$999",
+                description: "Complete preparation from G1 to G2"
+              }
+            ].map((pkg, idx) => (
+              <Card
+                key={idx}
+                className={`p-8 text-center transition-all duration-300 ${
+                  pkg.featured
+                    ? "border-2 border-amber-500 shadow-lg scale-105 bg-white"
+                    : "border-0 bg-white/80 hover:bg-white"
+                }`}
+              >
+                {pkg.featured && (
+                  <div className="inline-block bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                    Most Popular
+                  </div>
+                )}
+                <h3 className="text-teal-900 mb-2">{pkg.name}</h3>
+                <p className="text-3xl font-bold text-teal-700 mb-2">{pkg.price}</p>
+                <p className="text-gray-600 text-sm mb-4">{pkg.hours}</p>
+                <p className="text-gray-600 mb-6">{pkg.description}</p>
+                <Button
+                  className={`w-full ${
+                    pkg.featured
+                      ? "bg-teal-700 hover:bg-teal-800 text-white"
+                      : "bg-gray-200 hover:bg-gray-300 text-gray-900"
+                  }`}
+                >
+                  Get Started
+                </Button>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-teal-900 mb-4">What Our Students Say</h2>
+            <p className="text-gray-600 text-lg">Real feedback from real drivers</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah M.",
+                role: "First-time Driver",
+                text: "I was so nervous about driving, but the instructors here made me feel confident and safe. I passed my G2 on my first try!"
+              },
+              {
+                name: "James L.",
+                role: "G2 to G Preparation",
+                text: "Professional, patient, and thorough. They covered everything I needed to know for the road test. Highly recommended!"
+              },
+              {
+                name: "Emma T.",
+                role: "Highway Driving",
+                text: "The instructors taught me defensive driving techniques that have made me a safer driver on the highway. Worth every penny."
+              }
+            ].map((testimonial, idx) => (
+              <Card key={idx} className="p-8 border-0 bg-gray-50 hover:shadow-md transition-shadow">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-amber-500">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+                <div>
+                  <p className="font-semibold text-teal-900">{testimonial.name}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-teal-900 text-white py-20">
+        <div className="container text-center">
+          <h2 className="text-white mb-6">Ready to Start Your Driving Journey?</h2>
+          <p className="text-teal-100 text-lg mb-8 max-w-2xl mx-auto">
+            Book your first lesson today and take the first step toward becoming a confident, safe driver.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-teal-900 font-semibold">
+              Book Now
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-teal-800">
+              Call Us Today
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="bg-gray-900 text-gray-300 py-16">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <h3 className="text-white font-bold mb-4">Kelowna Driving School</h3>
+              <p className="text-sm">Professional driving instruction for all levels.</p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#services" className="hover:text-white transition">Services</a></li>
+                <li><a href="#testimonials" className="hover:text-white transition">Reviews</a></li>
+                <li><a href="#" className="hover:text-white transition">About</a></li>
+                <li><a href="#" className="hover:text-white transition">FAQ</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Contact</h4>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  <a href="tel:+1234567890" className="hover:text-white transition">(250) 555-0123</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  <a href="mailto:info@kelownads.com" className="hover:text-white transition">info@kelownads.com</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>Kelowna, BC</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Hours</h4>
+              <ul className="space-y-2 text-sm">
+                <li>Monday - Friday: 8am - 8pm</li>
+                <li>Saturday: 9am - 6pm</li>
+                <li>Sunday: 10am - 4pm</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-sm">
+            <p>&copy; 2026 Kelowna Driving School. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+

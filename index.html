@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calle Cinco Driving School Kelowna BC - Patient driving lessons and expert ICBC road test preparation. Helping beginners pass with confidence. Open 7 days.">
+    <meta name="keywords" content="driving school Kelowna, driving lessons Kelowna, ICBC road test Kelowna, beginner driving lessons Okanagan, Calle Cinco Driving School">
+    <title>Calle Cinco Driving School | Driving Lessons Kelowna BC | ICBC Road Test Prep</title>
+    
+    <!-- Local SEO Schema - DrivingSchool + LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DrivingSchool",
+      "name": "Calle Cinco Driving School",
+      "description": "Patient and professional driving lessons in Kelowna, BC. Specialized in helping nervous beginners pass their ICBC Class 5 and N road tests with confidence.",
+      "url": "https://callecinco.ca",
+      "telephone": "+1-250-300-0552",
+      "email": "drive@callecinco.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1540 Feedham Ave",
+        "addressLocality": "Kelowna",
+        "addressRegion": "BC",
+        "postalCode": "V1Y 7N9",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.8667,
+        "longitude": -119.4861
+      },
+      "image": "https://callecinco.ca/images/open-road.jpg",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "87"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Sarah M."},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "Passed my N test on the first try! Dean was so patient."
+        },
+        {
+          "@type": "Review",
+          "author": {"@type": "Person", "name": "Michael T."},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "reviewBody": "Best for nervous drivers. Made learning enjoyable."
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Driving Lesson Packages",
+        "itemListElement": [
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Single 90-min Lesson"},"price":"90","priceCurrency":"CAD"},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"3 Lesson Package"},"price":"265","priceCurrency":"CAD"},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"7 Lesson Package"},"price":"620","priceCurrency":"CAD"},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"11 Lesson Package + Road Test Car"},"price":"1040","priceCurrency":"CAD"}
+        ]
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Kelowna"
+      },
+      "serviceArea": {
+        "@type": "AdministrativeArea",
+        "name": "Okanagan Valley"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+.heading-font { font-family: 'Space Grotesk', sans-serif; }
+
+.hero-bg {
+    background: linear-gradient(rgba(0, 102, 204, 0.78), rgba(0, 102, 204, 0.78)), url('images/open-road.jpg') center/cover no-repeat;
+}
+
+:root {
+    --cta-yellow: #ECBE6B;
+    --cta-yellow-glow: rgba(236, 190, 107, 0.6);
+}
+
+/* CTA default (top of page) */
+.cta-btn {
+    background: var(--cta-yellow);
+    color: #1f2937;
+    transition: all 0.4s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CTA when scrolled */
+.cta-scrolled {
+    background: #0066cc;
+    color: white;
+    position: relative;
+}
+
+/* Slower pulse glow */
+.cta-scrolled::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    background: var(--cta-yellow-glow);
+    z-index: -1;
+    opacity: 0;
+    animation: pulseGlow 7s infinite;
+}
+
+/* Pulse timing: long delay, quick pulse */
+@keyframes pulseGlow {
+    0% { opacity: 0; transform: scale(1); }
+    70% { opacity: 0; transform: scale(1); }
+    75% { opacity: 0.6; transform: scale(1.1); }
+    85% { opacity: 0; transform: scale(1.4); }
+    100% { opacity: 0; transform: scale(1.4); }
+}
+
+/* NAV STATES */
+.nav-transparent {
+    background: transparent;
+}
+
+.nav-scrolled {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Cards */
+.step-card,
+.package-card {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+.step-card:hover,
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(30,64,175,0.15), 0 10px 20px rgba(30,64,175,0.1);
+}
+
+/* Logo */
+.logo-img {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 56px;
+    }
+}
+</style>
+</head>
+<body class="tailwind-ready">
+
+    <!-- NAVIGATION -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-transparent">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center py-5">
+            
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-x-3">
+    <img src="images/calle-cinco-logo.png" alt="Calle Cinco Driving School Logo" class="logo-img">
+</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-white">
+                <a href="#how" class="hover:text-yellow-400 transition">How It Works</a>
+                <a href="#packages" class="hover:text-yellow-400 transition">Packages</a>
+                <a href="#about" class="hover:text-yellow-400 transition">About Us</a>
+                <a href="#reviews" class="hover:text-yellow-400 transition">Reviews</a>
+                <a href="#faq" class="hover:text-yellow-400 transition">FAQ</a>
+            </div>
+
+            <!-- Right side -->
+            <div class="flex items-center gap-x-4">
+                <a href="tel:2503000552" class="hidden sm:flex items-center gap-x-2 text-sm font-medium text-white hover:text-yellow-400">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(250) 300-0552</span>
+                </a>
+
+                <button onclick="scrollToSection('contact')" 
+        id="cta-button"
+        class="cta-btn px-6 py-3 rounded-3xl font-semibold text-sm transition-all duration-300">
+    BOOK LESSON
+</button>
+
+                <!-- Mobile button -->
+                <button id="mobile-menu-button" class="md:hidden text-3xl text-white">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4">
+        <div class="flex flex-col gap-y-4 text-sm font-medium">
+            <a href="#how" onclick="toggleMobileMenu()" class="py-2">How It Works</a>
+            <a href="#packages" onclick="toggleMobileMenu()" class="py-2">Packages</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="py-2">About Us</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="py-2">Reviews</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="py-2">FAQ</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- HERO -->
+    <header id="hero" class="hero-bg text-white py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl">
+                    <i class="fa-solid fa-check-circle"></i>
+                    OPEN 7 DAYS A WEEK • ICBC ROAD TEST PREP
+                </div>
+                
+                <h1 class="heading-font text-5xl md:text-6xl leading-none tracking-tighter">
+                    Driving Lessons That Help You Pass With Confidence
+                </h1>
+                
+                <p class="text-xl md:text-2xl max-w-lg text-white/90">
+                    Patient, professional instruction in Kelowna — designed to help you become a safe, confident driver and pass your road test.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                            class="bg-white text-[#0066cc] hover:bg-gray-100 font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-x-3 shadow-xl">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        BOOK YOUR FIRST LESSON
+                    </button>
+                    
+                    <button onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})" 
+                            class="border-2 border-white hover:bg-white/10 font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-x-3 transition">
+                        VIEW LESSON PACKAGES
+                    </button>
+                </div>
+                
+                <!-- Trust signals -->
+                <div class="flex items-center gap-x-8 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-car-side text-3xl"></i>
+                        <div>
+                            <div class="font-semibold">ICBC Road Test Prep</div>
+                            <div class="text-white/80 text-xs">Includes car for your test</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-users text-3xl"></i>
+                        <div>
+                            <div class="font-semibold">Patient & Experienced Instructors</div>
+                            <div class="text-white/80 text-xs">Perfect for nervous beginners</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-clock text-3xl"></i>
+                        <div>
+                            <div class="font-semibold">Flexible Scheduling</div>
+                            <div class="text-white/80 text-xs">Evenings & weekends</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-x-6 text-xs uppercase tracking-widest">
+                    <div class="flex -space-x-4">
+                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-[#0066cc] shadow">👍</div>
+                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-[#0066cc] shadow">🚗</div>
+                    </div>
+                    <div class="text-white/80">4.9/5 on Google • 100+ first-time passes</div>
+                </div>
+            </div>
+            
+            <!-- Hero visual -->
+            <div class="hidden md:block relative">
+                <img src="images/driving-school-student-and-instructor.jpg" alt="Student learning to drive with patient instructor in Kelowna" 
+                     class="rounded-3xl shadow-2xl rotate-[-3deg] w-full transform hover:scale-105 transition duration-500">
+                <div class="absolute -bottom-6 -right-6 bg-white text-[#0066cc] rounded-3xl px-6 py-4 shadow-2xl flex items-center gap-x-3">
+                    <i class="fa-solid fa-check text-3xl"></i>
+                    <div class="text-left">
+                        <div class="font-bold text-xl">Passed on first try!</div>
+                        <div class="text-sm">— Our students average 94% pass rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#0066cc] font-medium tracking-widest">3 SIMPLE STEPS</span>
+                <h2 class="heading-font text-4xl mt-2">From Nervous Beginner to Confident Driver</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-4xl mb-6">📅</div>
+                    <h3 class="text-2xl font-semibold mb-3">1. Book Your Lesson</h3>
+                    <p class="text-gray-600">Call, text, or fill out the form. We reply within minutes and offer same-week availability.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-4xl mb-6">🧘‍♂️</div>
+                    <h3 class="text-2xl font-semibold mb-3">2. Learn With a Patient Instructor</h3>
+                    <p class="text-gray-600">Supportive, calm teaching style tailored to your pace — perfect for beginners and nervous drivers.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 step-card text-center border-2 border-[#0066cc]">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-4xl mb-6">🏆</div>
+                    <h3 class="text-2xl font-semibold mb-3">3. Pass Your Road Test With Confidence</h3>
+                    <p class="text-gray-600">We prepare you for the exact ICBC test routes in Kelowna using our dual-control vehicle.</p>
+                    <span class="inline-block mt-6 text-xs bg-[#0066cc] text-white px-4 py-1 rounded-3xl">Includes car for your test</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section id="approach" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#0066cc] font-medium tracking-widest">WHY CHOOSE US</span>
+                <h2 class="heading-font text-4xl mt-2">Our Approach</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We believe in creating confident, safe drivers through personalized instruction and unwavering patience.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🧘</div>
+                    <h3 class="text-xl font-semibold mb-3">Patient Instruction</h3>
+                    <p class="text-gray-600 text-sm">We understand that every student learns differently. Our instructors take the time to work at your pace.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3">Personalized Learning</h3>
+                    <p class="text-gray-600 text-sm">Each lesson is tailored to your specific needs and goals, whether you're a nervous beginner or refining advanced skills.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🛡️</div>
+                    <h3 class="text-xl font-semibold mb-3">Safety First</h3>
+                    <p class="text-gray-600 text-sm">We emphasize responsible driving habits and safety practices that will serve you for life.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">📈</div>
+                    <h3 class="text-xl font-semibold mb-3">Proven Results</h3>
+                    <p class="text-gray-600 text-sm">Our students have a 94% first-try pass rate on their ICBC road test.</p>
+                </div>
+            </div>
+            
+            <div class="bg-[#0066cc] rounded-3xl p-8 md:p-12 text-white text-center">
+                <h3 class="heading-font text-3xl mb-6">Our Instructors</h3>
+                <p class="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    Our team of experienced, patient instructors are dedicated to helping you succeed. They know Kelowna's roads and ICBC test routes inside and out, giving you the local knowledge you need to pass with confidence.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- INSTRUCTORS -->
+<section id="instructors" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-[#0066cc] font-medium tracking-widest">MEET YOUR INSTRUCTORS</span>
+            <h2 class="heading-font text-4xl mt-2">Friendly, Patient, and Here to Help You Pass</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                Meet the experienced instructors who will help you become a safe, confident driver.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Instructor 1 -->
+            <div class="text-center">
+                <img src="images/person1.jpg" alt="Dean"
+                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
+                <h3 class="text-xl font-semibold">Dean</h3>
+                <p class="text-sm text-gray-500 mb-3">Lead Instructor</p>
+                <p class="text-gray-600 text-sm">
+                    Calm and patient — specializes in helping nervous beginners feel comfortable behind the wheel.
+                </p>
+            </div>
+
+            <!-- Instructor 2 -->
+            <div class="text-center">
+                <img src="images/person8.jpg" alt="Sarah"
+                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
+                <h3 class="text-xl font-semibold">Sarah</h3>
+                <p class="text-sm text-gray-500 mb-3">Instructor</p>
+                <p class="text-gray-600 text-sm">
+                    Friendly and encouraging — great at building confidence for first-time drivers.
+                </p>
+            </div>
+
+            <!-- Instructor 3 -->
+            <div class="text-center">
+                <img src="images/person2.jpg" alt="Michael"
+                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
+                <h3 class="text-xl font-semibold">Michael</h3>
+                <p class="text-sm text-gray-500 mb-3">Instructor</p>
+                <p class="text-gray-600 text-sm">
+                    Focused on road test success — knows Kelowna routes inside and out.
+                </p>
+            </div>
+
+            <!-- Instructor 4 -->
+            <div class="text-center">
+                <img src="images/person9.jpg" alt="Jessica"
+                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
+                <h3 class="text-xl font-semibold">Jessica</h3>
+                <p class="text-sm text-gray-500 mb-3">Instructor</p>
+                <p class="text-gray-600 text-sm">
+                    Supportive and detail-oriented — helps students refine skills before their test.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- LESSON PACKAGES -->
+    <section id="packages" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="px-4 py-1 bg-[#0066cc] text-white text-sm rounded-3xl">REAL PRICES • NO HIDDEN FEES</span>
+                <h2 class="heading-font text-4xl mt-4">Choose Your Perfect Lesson Package</h2>
+                <p class="mt-3 text-gray-600 max-w-md mx-auto">90-minute lessons • Dual-control vehicle provided • Road test car rental available</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Package 1 -->
+                <div class="bg-white border border-gray-100 rounded-3xl p-8 package-card">
+                    <div class="text-[#0066cc] font-medium mb-2">STARTER</div>
+                    <div class="text-5xl font-semibold mb-1">$90</div>
+                    <div class="text-sm text-gray-500 mb-8">1 Lesson (90 minutes)</div>
+                    <p class="text-gray-600 mb-10">Perfect way to try us out and get comfortable behind the wheel.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                            class="w-full py-4 bg-gray-900 hover:bg-black text-white rounded-3xl font-medium transition">Book Single Lesson</button>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="bg-white border border-gray-100 rounded-3xl p-8 package-card relative">
+                    <div class="absolute -top-3 right-6 bg-amber-400 text-amber-900 text-xs px-4 py-1 rounded-3xl font-bold">MOST POPULAR</div>
+                    <div class="text-[#0066cc] font-medium mb-2">BEST VALUE</div>
+                    <div class="text-5xl font-semibold mb-1">$265</div>
+                    <div class="text-sm text-gray-500 mb-8">3 Lessons</div>
+                    <p class="text-gray-600 mb-10">Great for building foundational skills quickly.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                            class="w-full py-4 bg-[#0066cc] hover:bg-[#0055aa] text-white rounded-3xl font-medium transition">Book 3-Lesson Package</button>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="bg-white border border-gray-100 rounded-3xl p-8 package-card">
+                    <div class="text-[#0066cc] font-medium mb-2">INTENSIVE</div>
+                    <div class="text-5xl font-semibold mb-1">$620</div>
+                    <div class="text-sm text-gray-500 mb-8">7 Lessons</div>
+                    <p class="text-gray-600 mb-10">Ideal for students who want consistent practice and faster progress.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                            class="w-full py-4 bg-gray-900 hover:bg-black text-white rounded-3xl font-medium transition">Book 7-Lesson Package</button>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="bg-white border-2 border-[#0066cc] rounded-3xl p-8 package-card relative">
+                    <div class="text-[#0066cc] font-medium mb-2">COMPLETE</div>
+                    <div class="text-5xl font-semibold mb-1">$1,040</div>
+                    <div class="text-sm text-gray-500 mb-8">11 Lessons + Road Test Car</div>
+                    <p class="text-gray-600 mb-10">Everything you need to pass your ICBC Class 5 or N road test — car included on test day.</p>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                            class="w-full py-4 bg-[#0066cc] hover:bg-[#0055aa] text-white rounded-3xl font-medium transition">Get Full Package</button>
+                </div>
+            </div>
+            
+            <p class="text-center text-sm text-gray-500 mt-10">Road test car rental also available separately • Prices are approximate and subject to confirmation</p>
+        </div>
+    </section>
+
+    <!-- REVIEWS / TRUST -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-12">
+                <div>
+                    <h2 class="heading-font text-4xl">Real Students. Real Results.</h2>
+                    <p class="text-gray-600">Don't just take our word for it</p>
+                </div>
+                <a href="https://www.facebook.com/p/Calle-Cinco-Driving-School-61555361729231/" target="_blank" class="text-[#0066cc] flex items-center gap-x-2 hover:underline mt-4 md:mt-0">
+                    See all Google & Facebook reviews <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-8 rounded-3xl step-card">
+                    <div class="flex text-amber-400 mb-4">★★★★★</div>
+                    <p class="italic">"Passed my N test on the first try! Dean was so patient and made me feel completely at ease. Best decision I made."</p>
+                    <div class="mt-8 flex items-center gap-x-3">
+                        <img src="images/sarah.jpg" class="w-10 h-10 rounded-2xl object-cover">
+                        <div>
+                            <div class="font-medium">Sarah M.</div>
+                            <div class="text-xs text-gray-500">Kelowna • April 2026</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl step-card">
+                    <div class="flex text-amber-400 mb-4">★★★★★</div>
+                    <p class="italic">"I was super nervous as a beginner. Calle Cinco made learning to drive actually enjoyable. Highly recommend for anyone anxious behind the wheel."</p>
+                    <div class="mt-8 flex items-center gap-x-3">
+                        <img src="images/michael.jpg" class="w-10 h-10 rounded-2xl object-cover">
+                        <div>
+                            <div class="font-medium">Michael T.</div>
+                            <div class="text-xs text-gray-500">West Kelowna • March 2026</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl step-card">
+                    <div class="flex text-amber-400 mb-4">★★★★★</div>
+                    <p class="italic">"Best prices and the most amazing instructor. Passed both my N and Class 5 on the first attempt. Thank you Calle Cinco!"</p>
+                    <div class="mt-8 flex items-center gap-x-3">
+                        <img src="images/jessica.jpg" class="w-10 h-10 rounded-2xl object-cover">
+                        <div>
+                            <div class="font-medium">Jessica P.</div>
+                            <div class="text-xs text-gray-500">Kelowna • February 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5">
+                <img src="images/checklist.jpg" alt="Driving checklist and preparation materials" 
+                     class="rounded-3xl shadow-2xl w-full">
+            </div>
+            <div class="md:col-span-7">
+                <h2 class="heading-font text-4xl mb-6">Our Passion Is Teaching You to Drive Safely & Confidently</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    At Calle Cinco Driving School, we believe everyone deserves to feel calm and capable behind the wheel. 
+                    Our instructors are patient, encouraging, and truly love helping nervous beginners become skilled, responsible drivers.
+                </p>
+                <div class="grid grid-cols-2 gap-8 text-sm">
+                    <div class="flex gap-x-4">
+                        <i class="fa-solid fa-heart text-3xl text-[#0066cc]"></i>
+                        <div>
+                            <div class="font-semibold">Learn at your own pace</div>
+                            <p class="text-gray-600">No pressure. We customize every lesson to your comfort level and skill set.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-x-4">
+                        <i class="fa-solid fa-shield-halved text-3xl text-[#0066cc]"></i>
+                        <div>
+                            <div class="font-semibold">Safety first, always</div>
+                            <p class="text-gray-600">ICBC-aligned training focused on real-world defensive driving.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-12 text-sm font-medium flex items-center gap-x-2">
+                    📍 1540 Feedham Ave, Kelowna, BC • Serving all of Kelowna & the Okanagan Valley
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="contact" class="py-20 bg-[#0066cc] text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-5xl">Ready to Book Your First Lesson?</h2>
+                <p class="mt-4 text-2xl text-white/80">Call or text us — we answer fast and offer flexible times, including evenings and weekends.</p>
+                <a href="tel:2503000552" class="inline-flex items-center gap-x-3 mt-6 text-4xl font-medium hover:text-white/80">
+                    <i class="fa-solid fa-phone"></i> (250) 300-0552
+                </a>
+                <p class="text-sm mt-2">Call • Text • drive@callecinco.ca</p>
+            </div>
+            
+            <form id="booking-form" class="bg-white text-gray-900 rounded-3xl p-8 md:p-12 shadow-2xl">
+    
+    <!-- Urgency -->
+    <div class="mb-6 bg-amber-50 border border-amber-200 text-amber-800 px-6 py-4 rounded-2xl text-sm">
+        ⚠️ Limited spots available this week — most students book within 24 hours
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-sm font-medium mb-2">Your Name</label>
+            <input type="text" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+        </div>
+        <div>
+            <label class="block text-sm font-medium mb-2">Phone Number</label>
+            <input type="tel" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div>
+            <label class="block text-sm font-medium mb-2">Lesson Type</label>
+            <select class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+                <option>Single Lesson (90 min)</option>
+                <option>3 Lesson Package</option>
+                <option>7 Lesson Package</option>
+                <option>11 Lesson Package + Road Test Car</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-2">Experience Level</label>
+            <select class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+                <option>Complete Beginner</option>
+                <option>Some Driving Experience</option>
+                <option>Almost Test Ready</option>
+                <option>Need Help Passing Test</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Time slots -->
+    <div class="mt-6">
+        <label class="block text-sm font-medium mb-3">Preferred Time</label>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <button type="button" class="time-slot border rounded-2xl py-3 hover:border-[#0066cc]">Morning</button>
+            <button type="button" class="time-slot border rounded-2xl py-3 hover:border-[#0066cc]">Afternoon</button>
+            <button type="button" class="time-slot border rounded-2xl py-3 hover:border-[#0066cc]">Evening</button>
+            <button type="button" class="time-slot border rounded-2xl py-3 hover:border-[#0066cc]">Weekend</button>
+        </div>
+        <input type="hidden" id="selected-time">
+    </div>
+
+    <div class="mt-6">
+        <label class="block text-sm font-medium mb-2">Anything we should know?</label>
+        <textarea rows="4" placeholder="Nervous driver? Test coming up soon?" 
+                  class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]"></textarea>
+    </div>
+
+    <button type="submit" 
+            class="mt-8 w-full bg-[#0066cc] text-white py-6 rounded-3xl text-xl font-semibold hover:bg-[#0055aa] transition">
+        CHECK AVAILABILITY →
+    </button>
+
+    <p class="text-center text-xs text-gray-500 mt-6">
+        Takes 30 seconds • We’ll confirm your time by call or text
+    </p>
+
+    <!-- Success message -->
+    <div id="success-message" class="hidden mt-8 bg-green-50 border border-green-200 text-green-800 p-6 rounded-2xl text-center">
+        ✅ Request received!  
+        <br><br>
+        We’ll contact you shortly to confirm your lesson time.
+        <br>
+        <strong>(250) 300-0552</strong>
+    </div>
+
+</form>
+        </div>
+    </section>
+
+    <!-- LOCAL SECTION -->
+    <section class="py-12 bg-gray-50 border-t">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-[#0066cc] font-medium">SERVING KELOWNA & THE ENTIRE OKANAGAN VALLEY</p>
+            <p class="text-2xl mt-3">Local knowledge of ICBC test routes • Dual-control training vehicles • Convenient pick-up available</p>
+            <div class="flex justify-center gap-x-8 mt-10 text-sm">
+                <div>Kelowna</div>
+                <div>West Kelowna</div>
+                <div>Rutland</div>
+                <div>Lake Country</div>
+                <div>Peachland</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="heading-font text-4xl text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-6">
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
+                    <summary class="font-medium flex justify-between">How many lessons do I need?</summary>
+                    <p class="text-gray-600 mt-4">Most beginners need 7–11 lessons. We create a personalized plan after your first lesson.</p>
+                </details>
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
+                    <summary class="font-medium flex justify-between">Do you provide a vehicle?</summary>
+                    <p class="text-gray-600 mt-4">Yes! All lessons include our clean, dual-control training car. No need to use your own vehicle.</p>
+                </details>
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
+                    <summary class="font-medium flex justify-between">Can I use your car for my road test?</summary>
+                    <p class="text-gray-600 mt-4">Absolutely — included in the 11-lesson package and available for separate rental.</p>
+                </details>
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
+                    <summary class="font-medium flex justify-between">Do you work with beginners and nervous drivers?</summary>
+                    <p class="text-gray-600 mt-4">Yes! We specialize in helping anxious new drivers build real confidence in a calm, supportive environment.</p>
+                </details>
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
+                    <summary class="font-medium flex justify-between">What areas do you serve?</summary>
+                    <p class="text-gray-600 mt-4">All of Kelowna, West Kelowna, Lake Country, Rutland, and the greater Okanagan.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="bg-gradient-to-r from-[#0066cc] to-[#003366] py-16 text-white text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="heading-font text-5xl mb-4">Ready to Start Driving With Confidence?</h2>
+            <p class="text-xl mb-10">Let's get you on the road safely — your first lesson is just one call or click away.</p>
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                    class="text-2xl bg-white text-[#0066cc] px-16 py-7 rounded-3xl font-semibold inline-flex items-center gap-x-4 hover:scale-105 transition duration-300">
+                BOOK YOUR FIRST LESSON NOW
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <p class="mt-8 text-sm opacity-75">(250) 300-0552 • drive@callecinco.ca • Open 7 Days</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center gap-x-3 text-white mb-6">
+                    <img src="images/calle-cinco-logo.png" class="h-10 w-auto">
+                </div>
+                <p class="text-sm">Patient driving instruction in Kelowna, BC.<br>Helping you pass your ICBC road test with confidence.</p>
+            </div>
+            <div>
+                <div class="font-medium text-white mb-4">Quick Links</div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#packages" class="hover:text-white transition">Lesson Packages</a></li>
+                    <li><a href="#how" class="hover:text-white transition">How It Works</a></li>
+                    <li><a href="#approach" class="hover:text-white transition">Our Approach</a></li>
+                    <li><a href="#reviews" class="hover:text-white transition">Student Reviews</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="font-medium text-white mb-4">Contact</div>
+                <a href="tel:2503000552" class="block hover:text-white mb-2 transition">(250) 300-0552</a>
+                <a href="mailto:drive@callecinco.ca" class="block hover:text-white mb-2 transition">drive@callecinco.ca</a>
+                <p class="text-xs">1540 Feedham Ave<br>Kelowna, BC V1Y 7N9</p>
+            </div>
+            <div>
+                <div class="font-medium text-white mb-4">Follow Us</div>
+                <a href="https://www.facebook.com/p/Calle-Cinco-Driving-School-61555361729231/" target="_blank" class="inline-flex items-center gap-x-2 hover:text-white transition">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+                <p class="text-xs mt-12">© 2026 Calle Cinco Driving School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE BOOK BUTTON -->
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+            class="fixed bottom-6 right-6 md:hidden bg-[#0066cc] text-white w-14 h-14 rounded-3xl shadow-2xl flex items-center justify-center text-3xl z-50">
+        <i class="fa-solid fa-calendar"></i>
+    </button>
+
+    <script>
+// Smooth scroll helper
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Navbar + CTA scroll behavior
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    const cta = document.getElementById('cta-button');
+
+    if (window.scrollY > 50) {
+        nav.classList.remove('nav-transparent');
+        nav.classList.add('nav-scrolled');
+
+        // Nav links turn dark
+        nav.querySelectorAll('a').forEach(link => {
+            link.classList.remove('text-white');
+            link.classList.add('text-gray-800');
+        });
+
+        // CTA turns blue + white text + pulse
+        cta.classList.add('cta-scrolled');
+
+    } else {
+        nav.classList.add('nav-transparent');
+        nav.classList.remove('nav-scrolled');
+
+        // Nav links turn white again
+        nav.querySelectorAll('a').forEach(link => {
+            link.classList.remove('text-gray-800');
+            link.classList.add('text-white');
+        });
+
+        // CTA back to yellow
+        cta.classList.remove('cta-scrolled');
+    }
+});
+
+// Mobile menu toggle
+const menuBtn = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+function toggleMobileMenu() {
+    mobileMenu.classList.add('hidden');
+}
+
+// Time slot selection
+document.querySelectorAll('.time-slot').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('border-[#0066cc]', 'bg-blue-50'));
+        btn.classList.add('border-[#0066cc]', 'bg-blue-50');
+        document.getElementById('selected-time').value = btn.innerText;
+    });
+});
+
+// Fake form submission
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const btn = this.querySelector('button[type="submit"]');
+    const success = document.getElementById('success-message');
+
+    btn.innerHTML = 'CHECKING AVAILABILITY... <i class="fa-solid fa-spinner fa-spin"></i>';
+    btn.disabled = true;
+
+    setTimeout(() => {
+        success.classList.remove('hidden');
+        btn.innerHTML = 'REQUEST SENT ✓';
+        btn.classList.remove('bg-[#0066cc]');
+        btn.classList.add('bg-green-600');
+    }, 1200);
+});
+</script>
+</body>
+</html>
