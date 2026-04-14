@@ -170,7 +170,65 @@ html {
         height: 56px;
     }
 }
+/* ===== INSTRUCTOR CARD STYLING ===== */
+
+/* Instructor Card Base */
+.instructor-card {
+    transition: all 0.3s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Image zoom on hover */
+.instructor-card img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.instructor-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay gradient */
+.instructor-card .absolute {
+    transition: opacity 0.3s ease;
+}
+
+/* Badge Styling */
+.badge-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.badge-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+.badge-icon i {
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .instructor-card {
+        margin-bottom: 1rem;
+    }
+    
+    .badge-icon {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="tailwind-ready">
 
@@ -377,7 +435,7 @@ html {
             </div>
         </div>
     </section>
-    <!-- INSTRUCTORS -->
+        <!-- INSTRUCTORS -->
 <section id="instructors" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
@@ -390,48 +448,140 @@ html {
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-            <!-- Instructor 1 -->
-            <div class="text-center">
-                <img src="images/person1.jpg" alt="Dean"
-                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
-                <h3 class="text-xl font-semibold">Dean</h3>
-                <p class="text-sm text-gray-500 mb-3">Lead Instructor</p>
-                <p class="text-gray-600 text-sm">
-                    Calm and patient — specializes in helping nervous beginners feel comfortable behind the wheel.
-                </p>
+            <!-- Instructor 1: Dean -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person1.jpg" alt="Dean"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">
+                            Specializes in helping nervous beginners feel comfortable and confident behind the wheel.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Dean</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Lead Instructor</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Calm and patient — specializes in helping nervous beginners feel comfortable behind the wheel.
+                    </p>
+                    
+                    <!-- Credibility Badges (Option 2: Icon + Badge) -->
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i>
+                            <span>500+ Hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-green-100 px-3 py-1 rounded-full text-xs font-semibold text-green-700">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>96% Pass Rate</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Instructor 2 -->
-            <div class="text-center">
-                <img src="images/person8.jpg" alt="Sarah"
-                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
-                <h3 class="text-xl font-semibold">Sarah</h3>
-                <p class="text-sm text-gray-500 mb-3">Instructor</p>
-                <p class="text-gray-600 text-sm">
-                    Friendly and encouraging — great at building confidence for first-time drivers.
-                </p>
+            <!-- Instructor 2: Sarah -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person8.jpg" alt="Sarah"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">
+                            Great at building confidence for first-time drivers and nervous learners.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Sarah</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Friendly and encouraging — great at building confidence for first-time drivers.
+                    </p>
+                    
+                    <!-- Credibility Badges -->
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i>
+                            <span>350+ Hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-yellow-100 px-3 py-1 rounded-full text-xs font-semibold text-yellow-700">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.9★ (42)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Instructor 3 -->
-            <div class="text-center">
-                <img src="images/person2.jpg" alt="Michael"
-                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
-                <h3 class="text-xl font-semibold">Michael</h3>
-                <p class="text-sm text-gray-500 mb-3">Instructor</p>
-                <p class="text-gray-600 text-sm">
-                    Focused on road test success — knows Kelowna routes inside and out.
-                </p>
+            <!-- Instructor 3: Michael -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person2.jpg" alt="Michael"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">
+                            Knows Kelowna's ICBC test routes inside and out — your road test specialist.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Michael</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Focused on road test success — knows Kelowna routes inside and out.
+                    </p>
+                    
+                    <!-- Credibility Badges -->
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i>
+                            <span>420+ Hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-[#ECBE6B]/20 px-3 py-1 rounded-full text-xs font-semibold text-[#D4A017]">
+                            <i class="fa-solid fa-award"></i>
+                            <span>Top Instructor</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Instructor 4 -->
-            <div class="text-center">
-                <img src="images/person9.jpg" alt="Jessica"
-                     class="w-40 h-40 mx-auto rounded-3xl object-cover mb-6 shadow-lg">
-                <h3 class="text-xl font-semibold">Jessica</h3>
-                <p class="text-sm text-gray-500 mb-3">Instructor</p>
-                <p class="text-gray-600 text-sm">
-                    Supportive and detail-oriented — helps students refine skills before their test.
-                </p>
+            <!-- Instructor 4: Jessica -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person9.jpg" alt="Jessica"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">
+                            Detail-oriented approach helps students refine skills before their test.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Jessica</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Supportive and detail-oriented — helps students refine skills before their test.
+                    </p>
+                    
+                    <!-- Credibility Badges -->
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i>
+                            <span>380+ Hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-green-100 px-3 py-1 rounded-full text-xs font-semibold text-green-700">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>98% Pass Rate</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
