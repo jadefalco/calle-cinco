@@ -59,6 +59,16 @@
             background: linear-gradient(rgba(0, 102, 204, 0.78), rgba(0, 102, 204, 0.78)), url('images/open-road.jpg') center/cover no-repeat;
         }
 
+        /* ===== FLOATING ANIMATION ===== */
+        @keyframes float {
+            0%, 100% { transform: rotate(-3deg) translateY(0px); }
+            50% { transform: rotate(-3deg) translateY(-20px); }
+        }
+
+        .hero-image-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
         /* ===== NAVBAR STATES ===== */
         #navbar {
             transition: all 0.4s ease;
@@ -91,7 +101,7 @@
             color: #1f2937 !important;
         }
 
-                        /* ===== MOBILE MENU BUTTON ===== */
+        /* ===== MOBILE MENU BUTTON ===== */
         #mobile-menu-button {
             position: relative;
             width: 48px;
@@ -199,7 +209,7 @@
             animation: slideDown 0.3s ease-out;
         }
 
-        /* Cards */
+        /* ===== CARDS ===== */
         .step-card,
         .package-card {
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -306,9 +316,9 @@
 </head>
 <body>
 
-        <!-- NAVIGATION -->
+    <!-- NAVIGATION -->
     <nav id="navbar" class="fixed top-0 w-full z-50 nav-transparent">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center py-4">
                 
                 <!-- Logo -->
@@ -339,7 +349,7 @@
                         BOOK LESSON
                     </button>
 
-                    <!-- Mobile Toggle Button - MOVED HERE and FIXED -->
+                    <!-- Mobile Toggle Button -->
                     <button id="mobile-menu-button" class="relative w-12 h-12 flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300">
                         <div class="icon-wrapper relative w-10 h-10">
                             <i class="fa-solid fa-bars hamburger-icon absolute inset-0 flex items-center justify-center text-2xl"></i>
@@ -371,37 +381,37 @@
 
     <!-- HERO -->
     <header id="hero" class="hero-bg text-white pt-32 pb-20 md:py-28">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 md:space-y-8">
                 <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl">
                     <i class="fa-solid fa-check-circle"></i>
                     OPEN 7 DAYS A WEEK • ICBC ROAD TEST PREP
                 </div>
                 
-                <h1 class="heading-font text-5xl md:text-6xl leading-none tracking-tighter">
+                <h1 class="heading-font text-4xl md:text-5xl lg:text-6xl leading-none tracking-tighter">
                     Driving Lessons That Help You Pass With Confidence
                 </h1>
                 
-                <p class="text-xl md:text-2xl max-w-lg text-white/90">
+                <p class="text-lg md:text-xl lg:text-2xl max-w-lg text-white/90">
                     Patient, professional instruction in Kelowna — designed to help you become a safe, confident driver and pass your road test.
                 </p>
                 
-                                <!-- Buttons: Yellow (cta-btn) inline with White (outline) -->
+                <!-- Buttons -->
                 <div class="flex flex-wrap gap-4">
                     <button onclick="scrollToSection('contact')" 
-                            class="bg-[#ECBE6B] text-gray-900 hover:brightness-110 font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-x-3 shadow-xl transition-all duration-300">
+                            class="bg-[#ECBE6B] text-gray-900 hover:brightness-110 font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 shadow-xl transition-all duration-300">
                         <i class="fa-solid fa-calendar-check"></i>
                         BOOK YOUR FIRST LESSON
                     </button>
                     
                     <button onclick="scrollToSection('packages')" 
-                            class="border-2 border-white hover:bg-white/10 font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-x-3 transition">
+                            class="border-2 border-white hover:bg-white/10 font-semibold text-base md:text-lg px-6 md:px-8 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 transition">
                         VIEW LESSON PACKAGES
                     </button>
                 </div>
                 
-                <!-- PASTE THE TIGHTENED TRUST SIGNALS HERE -->
-                <div class="flex flex-wrap items-center gap-4 md:gap-x-8 text-sm">
+                <!-- Trust signals -->
+                <div class="flex flex-wrap items-center gap-4 md:gap-6 lg:gap-x-8 text-sm pt-2">
                     <div class="flex items-center gap-x-2">
                         <i class="fa-solid fa-car-side text-2xl md:text-3xl"></i>
                         <div>
@@ -424,15 +434,12 @@
                         </div>
                     </div>
                 </div>
-                
-            </div>  <!-- This closes the left column -->
+            </div>
             
-            <!-- Hero image -->
-   
-            
+            <!-- Hero image with floating animation -->
             <div class="hidden md:block relative">
                 <img src="images/driving-school-student-and-instructor.jpg" alt="Student learning to drive" 
-                     class="rounded-3xl shadow-2xl rotate-[-3deg] w-full hover:scale-105 transition duration-500">
+                     class="rounded-3xl shadow-2xl w-full hero-image-float">
                 <div class="absolute -bottom-6 -right-6 bg-white text-[#0066cc] rounded-3xl px-6 py-4 shadow-2xl flex items-center gap-x-3">
                     <i class="fa-solid fa-check text-3xl"></i>
                     <div>
@@ -445,28 +452,28 @@
     </header>
 
     <!-- HOW IT WORKS -->
-    <section id="how" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
+    <section id="how" class="py-20 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16">
-                <span class="text-[#0066cc] font-medium tracking-widest">3 SIMPLE STEPS</span>
-                <h2 class="heading-font text-4xl mt-2">From Nervous Beginner to Confident Driver</h2>
+                <span class="text-[#0066cc] font-medium tracking-widest text-sm uppercase">3 Simple Steps</span>
+                <h2 class="heading-font text-3xl md:text-4xl mt-3">From Nervous Beginner to Confident Driver</h2>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
                 <div class="bg-white rounded-3xl p-8 step-card text-center">
                     <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-4xl mb-6">📅</div>
-                    <h3 class="text-2xl font-semibold mb-3">1. Book Your Lesson</h3>
-                    <p class="text-gray-600">Call, text, or fill out the form. We reply within minutes and offer same-week availability.</p>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-3">1. Book Your Lesson</h3>
+                    <p class="text-gray-600 leading-relaxed">Call, text, or fill out the form. We reply within minutes and offer same-week availability.</p>
                 </div>
                 <div class="bg-white rounded-3xl p-8 step-card text-center">
                     <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-4xl mb-6">🧘‍♂️</div>
-                    <h3 class="text-2xl font-semibold mb-3">2. Learn With a Patient Instructor</h3>
-                    <p class="text-gray-600">Supportive, calm teaching style tailored to your pace — perfect for beginners and nervous drivers.</p>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-3">2. Learn With a Patient Instructor</h3>
+                    <p class="text-gray-600 leading-relaxed">Supportive, calm teaching style tailored to your pace — perfect for beginners and nervous drivers.</p>
                 </div>
                 <div class="bg-white rounded-3xl p-8 step-card text-center border-2 border-[#0066cc]">
                     <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-4xl mb-6">🏆</div>
-                    <h3 class="text-2xl font-semibold mb-3">3. Pass Your Road Test With Confidence</h3>
-                    <p class="text-gray-600">We prepare you for the exact ICBC test routes in Kelowna using our dual-control vehicle.</p>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-3">3. Pass Your Road Test With Confidence</h3>
+                    <p class="text-gray-600 leading-relaxed">We prepare you for the exact ICBC test routes in Kelowna using our dual-control vehicle.</p>
                     <span class="inline-block mt-6 text-xs bg-[#0066cc] text-white px-4 py-1 rounded-3xl">Includes car for your test</span>
                 </div>
             </div>
@@ -476,160 +483,159 @@
     
 
     <!-- INSTRUCTORS -->
-    <section id="instructors" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-[#0066cc] font-medium tracking-widest">EXPERTS BEHIND THE WHEEL</span>
-                <h2 class="heading-font text-4xl mt-2">Meet Your Instructors</h2>
-                <p class="mt-4 text-gray-600">Meet the experienced instructors who will help you become a safe, confident driver.</p>
+<section id="instructors" class="py-20 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+            <span class="text-[#0066cc] font-medium tracking-widest text-sm uppercase">Experts Behind the Wheel</span>
+            <h2 class="heading-font text-3xl md:text-4xl mt-3">Meet Your Instructors</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed">Meet the experienced instructors who will help you become a safe, confident driver.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <!-- Instructor 1: Dean -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person1.jpg" alt="Dean"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">Specializes in helping nervous beginners feel comfortable and confident behind the wheel.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Dean</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Lead Instructor</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i><span>500+ Hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-green-100 px-3 py-1 rounded-full text-xs font-semibold text-green-700">
+                            <i class="fa-solid fa-check-circle"></i><span>96% Pass Rate</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Instructor 1: Dean -->
-                <div class="instructor-card group">
-                    <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person1.jpg" alt="Dean"
-                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-sm leading-relaxed">Specializes in helping nervous beginners feel comfortable and confident behind the wheel.</p>
-                        </div>
+            <!-- Instructor 2: Sarah -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person8.jpg" alt="Sarah"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">Great at building confidence for first-time drivers and nervous learners.</p>
                     </div>
-                    <div class="text-center">
-                        <h3 class="text-2xl font-semibold text-gray-900">Dean</h3>
-                        <p class="text-sm font-medium text-[#0066cc] mb-4">Lead Instructor</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
-                                <i class="fa-solid fa-hourglass-end"></i><span>500+ Hours</span>
-                            </div>
-                            <div class="flex items-center gap-2 bg-green-100 px-3 py-1 rounded-full text-xs font-semibold text-green-700">
-                                <i class="fa-solid fa-check-circle"></i><span>96% Pass Rate</span>
-                            </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Sarah</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i><span>350+ Hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-yellow-100 px-3 py-1 rounded-full text-xs font-semibold text-yellow-700">
+                            <i class="fa-solid fa-star"></i><span>4.9★ (42)</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Instructor 2: Sarah -->
-                <div class="instructor-card group">
-                    <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person8.jpg" alt="Sarah"
-                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-sm leading-relaxed">Great at building confidence for first-time drivers and nervous learners.</p>
-                        </div>
+            <!-- Instructor 3: Michael -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person2.jpg" alt="Michael"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">Knows Kelowna's ICBC test routes inside and out — your road test specialist.</p>
                     </div>
-                    <div class="text-center">
-                        <h3 class="text-2xl font-semibold text-gray-900">Sarah</h3>
-                        <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
-                                <i class="fa-solid fa-hourglass-end"></i><span>350+ Hours</span>
-                            </div>
-                            <div class="flex items-center gap-2 bg-yellow-100 px-3 py-1 rounded-full text-xs font-semibold text-yellow-700">
-                                <i class="fa-solid fa-star"></i><span>4.9★ (42)</span>
-                            </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Michael</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i><span>420+ Hours</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-[#ECBE6B]/20 px-3 py-1 rounded-full text-xs font-semibold text-[#D4A017]">
+                            <i class="fa-solid fa-award"></i><span>Top Instructor</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Instructor 3: Michael -->
-                <div class="instructor-card group">
-                    <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person2.jpg" alt="Michael"
-                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-sm leading-relaxed">Knows Kelowna's ICBC test routes inside and out — your road test specialist.</p>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h3 class="text-2xl font-semibold text-gray-900">Michael</h3>
-                        <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
-                                <i class="fa-solid fa-hourglass-end"></i><span>420+ Hours</span>
-                            </div>
-                            <div class="flex items-center gap-2 bg-[#ECBE6B]/20 px-3 py-1 rounded-full text-xs font-semibold text-[#D4A017]">
-                                <i class="fa-solid fa-award"></i><span>Top Instructor</span>
-                            </div>
-                        </div>
+            <!-- Instructor 4: Jessica -->
+            <div class="instructor-card group">
+                <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
+                    <img src="images/person9.jpg" alt="Jessica"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white text-sm leading-relaxed">Detail-oriented approach helps students refine skills before their test.</p>
                     </div>
                 </div>
-
-                <!-- Instructor 4: Jessica -->
-                <div class="instructor-card group">
-                    <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person9.jpg" alt="Jessica"
-                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-sm leading-relaxed">Detail-oriented approach helps students refine skills before their test.</p>
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-gray-900">Jessica</h3>
+                    <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
+                            <i class="fa-solid fa-hourglass-end"></i><span>380+ Hours</span>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <h3 class="text-2xl font-semibold text-gray-900">Jessica</h3>
-                        <p class="text-sm font-medium text-[#0066cc] mb-4">Instructor</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <div class="flex items-center gap-2 bg-[#0066cc]/10 px-3 py-1 rounded-full text-xs font-semibold text-[#0066cc]">
-                                <i class="fa-solid fa-hourglass-end"></i><span>380+ Hours</span>
-                            </div>
-                            <div class="flex items-center gap-2 bg-green-100 px-3 py-1 rounded-full text-xs font-semibold text-green-700">
-                                <i class="fa-solid fa-check-circle"></i><span>98% Pass Rate</span>
-                            </div>
+                        <div class="flex items-center gap-2 bg-green-100 px-3 py-1 rounded-full text-xs font-semibold text-green-700">
+                            <i class="fa-solid fa-check-circle"></i><span>98% Pass Rate</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- OUR APPROACH -->
-    <section id="approach" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-[#0066cc] font-medium tracking-widest">WHY CHOOSE US</span>
-                <h2 class="heading-font text-4xl mt-2">Our Approach</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We believe in creating confident, safe drivers through personalized instruction and unwavering patience.</p>
+<!-- OUR APPROACH -->
+<section id="approach" class="py-20 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16">
+            <span class="text-[#0066cc] font-medium tracking-widest text-sm uppercase">Why Choose Us</span>
+            <h2 class="heading-font text-3xl md:text-4xl mt-3">Our Approach</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed">We believe in creating confident, safe drivers through personalized instruction and unwavering patience.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div class="bg-white rounded-3xl p-8 step-card text-center">
+                <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🧘</div>
+                <h3 class="text-xl font-semibold mb-3">Patient Instruction</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">We understand that every student learns differently. Our instructors take the time to work at your pace.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🧘</div>
-                    <h3 class="text-xl font-semibold mb-3">Patient Instruction</h3>
-                    <p class="text-gray-600 text-sm">We understand that every student learns differently. Our instructors take the time to work at your pace.</p>
-                </div>
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🛡️</div>
-                    <h3 class="text-xl font-semibold mb-3">Safety First</h3>
-                    <p class="text-gray-600 text-sm">Our dual-control vehicles and defensive driving focus ensure a safe learning environment for everyone.</p>
-                </div>
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">📍</div>
-                    <h3 class="text-xl font-semibold mb-3">Local Expertise</h3>
-                    <p class="text-gray-600 text-sm">We know the ICBC test routes in Kelowna inside and out, giving you the best chance of success.</p>
-                </div>
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🤝</div>
-                    <h3 class="text-xl font-semibold mb-3">Proven Success</h3>
-                    <p class="text-gray-600 text-sm">With a high pass rate and dozens of happy students, our methods are tried and tested.</p>
-                </div>
+            <div class="bg-white rounded-3xl p-8 step-card text-center">
+                <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🛡️</div>
+                <h3 class="text-xl font-semibold mb-3">Safety First</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Our dual-control vehicles and defensive driving focus ensure a safe learning environment for everyone.</p>
+            </div>
+            <div class="bg-white rounded-3xl p-8 step-card text-center">
+                <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">📍</div>
+                <h3 class="text-xl font-semibold mb-3">Local Expertise</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">We know the ICBC test routes in Kelowna inside and out, giving you the best chance of success.</p>
+            </div>
+            <div class="bg-white rounded-3xl p-8 step-card text-center">
+                <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🤝</div>
+                <h3 class="text-xl font-semibold mb-3">Proven Success</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">With a high pass rate and dozens of happy students, our methods are tried and tested.</p>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- LESSON PACKAGES -->
-    <section id="packages" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <span class="px-4 py-1 bg-[#0066cc] text-white text-sm rounded-3xl">REAL PRICES • NO HIDDEN FEES</span>
-                <h2 class="heading-font text-4xl mt-4">Choose Your Perfect Lesson Package</h2>
-                <p class="mt-3 text-gray-600 max-w-md mx-auto">90-minute lessons • Dual-control vehicle provided • Road test car rental available</p>
+    <section id="packages" class="py-20 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-1 bg-[#0066cc] text-white text-sm rounded-3xl font-medium">REAL PRICES • NO HIDDEN FEES</span>
+                <h2 class="heading-font text-3xl md:text-4xl mt-6">Choose Your Perfect Lesson Package</h2>
+                <p class="mt-4 text-gray-600 max-w-md mx-auto leading-relaxed">90-minute lessons • Dual-control vehicle provided • Road test car rental available</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                 <!-- Package 1 -->
                 <div class="bg-white border border-gray-100 rounded-3xl p-8 package-card">
-                    <div class="text-[#0066cc] font-medium mb-2">STARTER</div>
+                    <div class="text-[#0066cc] font-medium mb-2 text-sm uppercase tracking-wide">Starter</div>
                     <div class="text-5xl font-semibold mb-1">$90</div>
                     <div class="text-sm text-gray-500 mb-8">1 Lesson (90 minutes)</div>
-                    <p class="text-gray-600 mb-10">Perfect way to try us out and get comfortable behind the wheel.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Perfect way to try us out and get comfortable behind the wheel.</p>
                     <button onclick="scrollToSection('contact')" 
                             class="w-full py-4 bg-gray-900 hover:bg-black text-white rounded-3xl font-medium transition">Book Single Lesson</button>
                 </div>
@@ -637,58 +643,58 @@
                 <!-- Package 2 -->
                 <div class="bg-white border border-gray-100 rounded-3xl p-8 package-card relative">
                     <div class="absolute -top-3 right-6 bg-amber-400 text-amber-900 text-xs px-4 py-1 rounded-3xl font-bold">MOST POPULAR</div>
-                    <div class="text-[#0066cc] font-medium mb-2">BEST VALUE</div>
+                    <div class="text-[#0066cc] font-medium mb-2 text-sm uppercase tracking-wide">Best Value</div>
                     <div class="text-5xl font-semibold mb-1">$260</div>
                     <div class="text-sm text-gray-500 mb-8">3 Lessons (90 min each)</div>
-                    <p class="text-gray-600 mb-10">Build a solid foundation and master the basics of safe driving.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Build a solid foundation and master the basics of safe driving.</p>
                     <button onclick="scrollToSection('contact')" 
                             class="w-full py-4 bg-[#0066cc] hover:bg-[#0055aa] text-white rounded-3xl font-medium transition">Book 3-Lesson Package</button>
                 </div>
                 
                 <!-- Package 3 -->
                 <div class="bg-white border border-gray-100 rounded-3xl p-8 package-card">
-                    <div class="text-[#0066cc] font-medium mb-2">INTENSIVE</div>
+                    <div class="text-[#0066cc] font-medium mb-2 text-sm uppercase tracking-wide">Intensive</div>
                     <div class="text-5xl font-semibold mb-1">$620</div>
                     <div class="text-sm text-gray-500 mb-8">7 Lessons</div>
-                    <p class="text-gray-600 mb-10">Ideal for students who want consistent practice and faster progress.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Ideal for students who want consistent practice and faster progress.</p>
                     <button onclick="scrollToSection('contact')" 
                             class="w-full py-4 bg-gray-900 hover:bg-black text-white rounded-3xl font-medium transition">Book 7-Lesson Package</button>
                 </div>
                 
                 <!-- Package 4 -->
                 <div class="bg-white border-2 border-[#0066cc] rounded-3xl p-8 package-card relative">
-                    <div class="text-[#0066cc] font-medium mb-2">COMPLETE</div>
+                    <div class="text-[#0066cc] font-medium mb-2 text-sm uppercase tracking-wide">Complete</div>
                     <div class="text-5xl font-semibold mb-1">$1,040</div>
                     <div class="text-sm text-gray-500 mb-8">11 Lessons + Road Test Car</div>
-                    <p class="text-gray-600 mb-10">Everything you need to pass your ICBC Class 5 or N road test — car included on test day.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Everything you need to pass your ICBC Class 5 or N road test — car included on test day.</p>
                     <button onclick="scrollToSection('contact')" 
                             class="w-full py-4 bg-[#0066cc] hover:bg-[#0055aa] text-white rounded-3xl font-medium transition">Get Full Package</button>
                 </div>
             </div>
             
-            <p class="text-center text-sm text-gray-500 mt-10">Road test car rental also available separately • Prices are approximate and subject to confirmation</p>
+            <p class="text-center text-sm text-gray-500 mt-12">Road test car rental also available separately • Prices are approximate and subject to confirmation</p>
         </div>
     </section>
 
     <!-- REVIEWS -->
-    <section id="reviews" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-baseline mb-12">
+    <section id="reviews" class="py-20 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-12 md:mb-16">
                 <div>
-                    <h2 class="heading-font text-4xl">Real Students. Real Results.</h2>
-                    <p class="text-gray-600">Don't just take our word for it</p>
+                    <h2 class="heading-font text-3xl md:text-4xl">Real Students. Real Results.</h2>
+                    <p class="text-gray-600 mt-2">Don't just take our word for it</p>
                 </div>
-                <a href="https://www.facebook.com/p/Calle-Cinco-Driving-School-61555361729231/" target="_blank" class="text-[#0066cc] flex items-center gap-x-2 hover:underline mt-4 md:mt-0">
+                <a href="https://www.facebook.com/p/Calle-Cinco-Driving-School-61555361729231/" target="_blank" class="text-[#0066cc] flex items-center gap-x-2 hover:underline mt-4 md:mt-0 font-medium">
                     See all Google & Facebook reviews <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
                 <div class="bg-white p-8 rounded-3xl step-card">
-                    <div class="flex text-amber-400 mb-4">★★★★★</div>
-                    <p class="italic">"Passed my N test on the first try! Dean was so patient and made me feel completely at ease. Best decision I made."</p>
-                    <div class="mt-8 flex items-center gap-x-3">
-                        <img src="images/person9.jpg" class="w-10 h-10 rounded-2xl object-cover">
+                    <div class="flex text-amber-400 mb-4 text-lg">★★★★★</div>
+                    <p class="italic text-gray-700 leading-relaxed">"Passed my N test on the first try! Dean was so patient and made me feel completely at ease. Best decision I made."</p>
+                    <div class="mt-6 flex items-center gap-x-3">
+                        <img src="images/sarah.jpg" class="w-10 h-10 rounded-2xl object-cover">
                         <div>
                             <div class="font-medium">Sarah M.</div>
                             <div class="text-xs text-gray-500">Kelowna • April 2026</div>
@@ -696,9 +702,9 @@
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-3xl step-card">
-                    <div class="flex text-amber-400 mb-4">★★★★★</div>
-                    <p class="italic">"I was super nervous as a beginner. Calle Cinco made learning to drive actually enjoyable. Highly recommend for anyone anxious behind the wheel."</p>
-                    <div class="mt-8 flex items-center gap-x-3">
+                    <div class="flex text-amber-400 mb-4 text-lg">★★★★★</div>
+                    <p class="italic text-gray-700 leading-relaxed">"I was super nervous as a beginner. Calle Cinco made learning to drive actually enjoyable. Highly recommend for anyone anxious behind the wheel."</p>
+                    <div class="mt-6 flex items-center gap-x-3">
                         <img src="images/michael.jpg" class="w-10 h-10 rounded-2xl object-cover">
                         <div>
                             <div class="font-medium">Michael T.</div>
@@ -707,9 +713,9 @@
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-3xl step-card">
-                    <div class="flex text-amber-400 mb-4">★★★★★</div>
-                    <p class="italic">"Best prices and the most amazing instructor. Passed both my N and Class 5 on the first attempt. Thank you Calle Cinco!"</p>
-                    <div class="mt-8 flex items-center gap-x-3">
+                    <div class="flex text-amber-400 mb-4 text-lg">★★★★★</div>
+                    <p class="italic text-gray-700 leading-relaxed">"Best prices and the most amazing instructor. Passed both my N and Class 5 on the first attempt. Thank you Calle Cinco!"</p>
+                    <div class="mt-6 flex items-center gap-x-3">
                         <img src="images/jessica.jpg" class="w-10 h-10 rounded-2xl object-cover">
                         <div>
                             <div class="font-medium">Jessica P.</div>
@@ -722,35 +728,35 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+    <section id="about" class="py-20 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div class="md:col-span-5">
                 <img src="images/checklist.jpg" alt="Driving checklist and preparation materials" 
                      class="rounded-3xl shadow-2xl w-full">
             </div>
             <div class="md:col-span-7">
-                <h2 class="heading-font text-4xl mb-6">Our Passion Is Teaching You to Drive Safely & Confidently</h2>
+                <h2 class="heading-font text-3xl md:text-4xl mb-6">Our Passion Is Teaching You to Drive Safely & Confidently</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-8">
                     At Calle Cinco Driving School, we believe everyone deserves to feel calm and capable behind the wheel. 
                     Our instructors are patient, encouraging, and truly love helping nervous beginners become skilled, responsible drivers.
                 </p>
-                <div class="grid grid-cols-2 gap-8 text-sm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
                     <div class="flex gap-x-4">
                         <i class="fa-solid fa-heart text-3xl text-[#0066cc]"></i>
                         <div>
-                            <div class="font-semibold">Learn at your own pace</div>
-                            <p class="text-gray-600">No pressure. We customize every lesson to your comfort level and skill set.</p>
+                            <div class="font-semibold mb-1">Learn at your own pace</div>
+                            <p class="text-gray-600 text-sm leading-relaxed">No pressure. We customize every lesson to your comfort level and skill set.</p>
                         </div>
                     </div>
                     <div class="flex gap-x-4">
                         <i class="fa-solid fa-shield-halved text-3xl text-[#0066cc]"></i>
                         <div>
-                            <div class="font-semibold">Safety first, always</div>
-                            <p class="text-gray-600">ICBC-aligned training focused on real-world defensive driving.</p>
+                            <div class="font-semibold mb-1">Safety first, always</div>
+                            <p class="text-gray-600 text-sm leading-relaxed">ICBC-aligned training focused on real-world defensive driving.</p>
                         </div>
                     </div>
                 </div>
-                <p class="mt-12 text-sm font-medium flex items-center gap-x-2">
+                <p class="mt-8 text-sm font-medium flex items-center gap-x-2 text-gray-600">
                     📍 1540 Feedham Ave, Kelowna, BC • Serving all of Kelowna & the Okanagan Valley
                 </p>
             </div>
@@ -758,18 +764,18 @@
     </section>
 
     <!-- BOOKING SECTION -->
-    <section id="contact" class="py-20 bg-[#0066cc] text-white">
-        <div class="max-w-4xl mx-auto px-6">
+    <section id="contact" class="py-20 md:py-24 bg-[#0066cc] text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-5xl">Ready to Book Your First Lesson?</h2>
-                <p class="mt-4 text-2xl text-white/80">Call or text us — we answer fast and offer flexible times, including evenings and weekends.</p>
-                <a href="tel:2503000552" class="inline-flex items-center gap-x-3 mt-6 text-4xl font-medium hover:text-white/80">
+                <h2 class="heading-font text-4xl md:text-5xl">Ready to Book Your First Lesson?</h2>
+                <p class="mt-4 text-xl md:text-2xl text-white/80 leading-relaxed">Call or text us — we answer fast and offer flexible times, including evenings and weekends.</p>
+                <a href="tel:2503000552" class="inline-flex items-center gap-x-3 mt-6 text-3xl md:text-4xl font-medium hover:text-white/80 transition">
                     <i class="fa-solid fa-phone"></i> (250) 300-0552
                 </a>
-                <p class="text-sm mt-2">Call • Text • drive@callecinco.ca</p>
+                <p class="text-sm mt-2 opacity-80">Call • Text • drive@callecinco.ca</p>
             </div>
             
-            <form id="booking-form" class="bg-white text-gray-900 rounded-3xl p-8 md:p-12 shadow-2xl">
+            <form id="booking-form" class="bg-white text-gray-900 rounded-3xl p-6 md:p-12 shadow-2xl">
                 <div class="mb-6 bg-amber-50 border border-amber-200 text-amber-800 px-6 py-4 rounded-2xl text-sm">
                     ⚠️ Limited spots available this week — most students book within 24 hours
                 </div>
@@ -777,18 +783,18 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-medium mb-2">Your Name</label>
-                        <input type="text" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+                        <input type="text" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc] transition">
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Phone Number</label>
-                        <input type="tel" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+                        <input type="tel" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc] transition">
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6 mt-6">
                     <div>
                         <label class="block text-sm font-medium mb-2">Lesson Type</label>
-                        <select class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+                        <select class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc] transition bg-white">
                             <option>Single Lesson (90 min)</option>
                             <option>3 Lesson Package</option>
                             <option>7 Lesson Package</option>
@@ -797,7 +803,7 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Experience Level</label>
-                        <select class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]">
+                        <select class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc] transition bg-white">
                             <option>Complete Beginner</option>
                             <option>Some Driving Experience</option>
                             <option>Almost Test Ready</option>
@@ -809,10 +815,10 @@
                 <div class="mt-6">
                     <label class="block text-sm font-medium mb-3">Preferred Time</label>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition">Morning</button>
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition">Afternoon</button>
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition">Evening</button>
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition">Weekend</button>
+                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition text-sm">Morning</button>
+                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition text-sm">Afternoon</button>
+                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition text-sm">Evening</button>
+                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-[#0066cc] transition text-sm">Weekend</button>
                     </div>
                     <input type="hidden" id="selected-time">
                 </div>
@@ -820,11 +826,11 @@
                 <div class="mt-6">
                     <label class="block text-sm font-medium mb-2">Anything we should know?</label>
                     <textarea rows="4" placeholder="Nervous driver? Test coming up soon?" 
-                              class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc]"></textarea>
+                              class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#0066cc] transition resize-none"></textarea>
                 </div>
 
                 <button type="submit" 
-                        class="mt-8 w-full bg-[#0066cc] text-white py-6 rounded-3xl text-xl font-semibold hover:bg-[#0055aa] transition">
+                        class="mt-8 w-full bg-[#0066cc] text-white py-5 md:py-6 rounded-3xl text-lg md:text-xl font-semibold hover:bg-[#0055aa] transition">
                     SEND BOOKING REQUEST
                 </button>
                 <p class="text-center text-xs text-gray-500 mt-6">Takes 30 seconds • We'll confirm your time by call or text</p>
@@ -839,26 +845,26 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-20 bg-gray-50">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="heading-font text-4xl text-center mb-12">Frequently Asked Questions</h2>
+    <section id="faq" class="py-20 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 class="heading-font text-3xl md:text-4xl text-center mb-12">Frequently Asked Questions</h2>
             
-            <div class="space-y-6">
-                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
-                    <summary class="font-medium flex justify-between">How many lessons do I need?</summary>
-                    <p class="text-gray-600 mt-4">Most beginners need 7–11 lessons. We create a personalized plan after your first lesson.</p>
+            <div class="space-y-4 md:space-y-6">
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors group">
+                    <summary class="font-medium flex justify-between items-center">How many lessons do I need? <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Most beginners need 7–11 lessons. We create a personalized plan after your first lesson.</p>
                 </details>
-                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
-                    <summary class="font-medium flex justify-between">Do you provide a vehicle?</summary>
-                    <p class="text-gray-600 mt-4">Yes! All lessons include our clean, dual-control training car. No need to use your own vehicle.</p>
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors group">
+                    <summary class="font-medium flex justify-between items-center">Do you provide a vehicle? <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Yes! All lessons include our clean, dual-control training car. No need to use your own vehicle.</p>
                 </details>
-                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
-                    <summary class="font-medium flex justify-between">Can I use your car for my road test?</summary>
-                    <p class="text-gray-600 mt-4">Absolutely — included in the 11-lesson package and available for separate rental.</p>
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors group">
+                    <summary class="font-medium flex justify-between items-center">Can I use your car for my road test? <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Absolutely — included in the 11-lesson package and available for separate rental.</p>
                 </details>
-                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors">
-                    <summary class="font-medium flex justify-between">Do you work with beginners and nervous drivers?</summary>
-                    <p class="text-gray-600 mt-4">Yes! We specialize in helping anxious new drivers build real confidence in a calm, supportive environment.</p>
+                <details class="bg-white border rounded-3xl p-6 cursor-pointer hover:border-[#0066cc] transition-colors group">
+                    <summary class="font-medium flex justify-between items-center">Do you work with beginners and nervous drivers? <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i></summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Yes! We specialize in helping anxious new drivers build real confidence in a calm, supportive environment.</p>
                 </details>
             </div>
         </div>
@@ -866,14 +872,14 @@
 
     <!-- FOOTER -->
     <footer class="bg-gray-900 text-gray-400 py-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-8 lg:gap-12">
             <div>
                 <img src="images/calle-cinco-logo.png" class="h-10 w-auto mb-6">
-                <p class="text-sm">Patient driving instruction in Kelowna, BC.<br>Helping you pass your ICBC road test with confidence.</p>
+                <p class="text-sm leading-relaxed">Patient driving instruction in Kelowna, BC.<br>Helping you pass your ICBC road test with confidence.</p>
             </div>
             <div>
                 <div class="font-medium text-white mb-4">Quick Links</div>
-                <ul class="space-y-2 text-sm">
+                <ul class="space-y-3 text-sm">
                     <li><a href="#packages" class="hover:text-white transition">Lesson Packages</a></li>
                     <li><a href="#how" class="hover:text-white transition">How It Works</a></li>
                     <li><a href="#approach" class="hover:text-white transition">Our Approach</a></li>
@@ -884,7 +890,7 @@
                 <div class="font-medium text-white mb-4">Contact</div>
                 <a href="tel:2503000552" class="block hover:text-white mb-2 transition">(250) 300-0552</a>
                 <a href="mailto:drive@callecinco.ca" class="block hover:text-white mb-2 transition">drive@callecinco.ca</a>
-                <p class="text-xs mt-4">1540 Feedham Ave<br>Kelowna, BC V1Y 7N9</p>
+                <p class="text-xs mt-4 leading-relaxed">1540 Feedham Ave<br>Kelowna, BC V1Y 7N9</p>
             </div>
             <div>
                 <div class="font-medium text-white mb-4">Follow Us</div>
@@ -898,7 +904,7 @@
 
     <!-- STICKY MOBILE BOOK BUTTON -->
     <button onclick="scrollToSection('contact')" 
-            class="fixed bottom-6 right-6 md:hidden bg-[#0066cc] text-white w-14 h-14 rounded-3xl shadow-2xl flex items-center justify-center text-3xl z-50">
+            class="fixed bottom-6 right-6 md:hidden bg-[#0066cc] text-white w-14 h-14 rounded-3xl shadow-2xl flex items-center justify-center text-3xl z-50 hover:bg-[#0055aa] transition">
         <i class="fa-solid fa-calendar"></i>
     </button>
 
