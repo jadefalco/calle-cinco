@@ -91,7 +91,7 @@
             color: #1f2937 !important;
         }
 
-        /* ===== MOBILE MENU BUTTON ===== */
+                /* ===== MOBILE MENU BUTTON ===== */
         #mobile-menu-button {
             position: relative;
             width: 48px;
@@ -130,22 +130,23 @@
             left: 0;
             width: 100%;
             height: 100%;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .hamburger-icon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        /* Default states */
-        .hamburger-icon {
-            opacity: 1;
-            transform: rotate(0deg) scale(1);
         }
 
         .steering-wheel-icon {
             opacity: 0;
             transform: rotate(-180deg) scale(0);
+            object-fit: contain;
+            pointer-events: none;
         }
 
         /* When menu is open - hamburger spins out, steering wheel spins in */
@@ -319,6 +320,12 @@
                     <a href="#faq" class="hover:text-yellow-400 transition">FAQ</a>
                 </div>
 
+                <button id="mobile-menu-button" class="relative w-12 h-12 flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300">
+    <div class="icon-wrapper relative w-6 h-6">
+        <i class="fa-solid fa-bars hamburger-icon absolute inset-0 flex items-center justify-center text-xl"></i>
+        <img src="images/steering_wheel_transparent.png" alt="Close menu" class="steering-wheel-icon absolute inset-0 w-full h-full object-contain">
+    </div>
+</button>
                 <!-- Right side -->
                 <div class="flex items-center gap-x-4">
                     <a href="tel:2503000552" class="hidden sm:flex items-center gap-x-2 text-sm font-medium phone-link hover:text-yellow-400 transition">
@@ -460,39 +467,7 @@
         </div>
     </section>
 
-    <!-- OUR APPROACH -->
-    <section id="approach" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-[#0066cc] font-medium tracking-widest">WHY CHOOSE US</span>
-                <h2 class="heading-font text-4xl mt-2">Our Approach</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We believe in creating confident, safe drivers through personalized instruction and unwavering patience.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🧘</div>
-                    <h3 class="text-xl font-semibold mb-3">Patient Instruction</h3>
-                    <p class="text-gray-600 text-sm">We understand that every student learns differently. Our instructors take the time to work at your pace.</p>
-                </div>
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🛡️</div>
-                    <h3 class="text-xl font-semibold mb-3">Safety First</h3>
-                    <p class="text-gray-600 text-sm">Our dual-control vehicles and defensive driving focus ensure a safe learning environment for everyone.</p>
-                </div>
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">📍</div>
-                    <h3 class="text-xl font-semibold mb-3">Local Expertise</h3>
-                    <p class="text-gray-600 text-sm">We know the ICBC test routes in Kelowna inside and out, giving you the best chance of success.</p>
-                </div>
-                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
-                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🤝</div>
-                    <h3 class="text-xl font-semibold mb-3">Proven Success</h3>
-                    <p class="text-gray-600 text-sm">With a high pass rate and dozens of happy students, our methods are tried and tested.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- INSTRUCTORS -->
     <section id="instructors" class="py-20 bg-gray-50">
@@ -594,6 +569,40 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section id="approach" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#0066cc] font-medium tracking-widest">WHY CHOOSE US</span>
+                <h2 class="heading-font text-4xl mt-2">Our Approach</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We believe in creating confident, safe drivers through personalized instruction and unwavering patience.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🧘</div>
+                    <h3 class="text-xl font-semibold mb-3">Patient Instruction</h3>
+                    <p class="text-gray-600 text-sm">We understand that every student learns differently. Our instructors take the time to work at your pace.</p>
+                </div>
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🛡️</div>
+                    <h3 class="text-xl font-semibold mb-3">Safety First</h3>
+                    <p class="text-gray-600 text-sm">Our dual-control vehicles and defensive driving focus ensure a safe learning environment for everyone.</p>
+                </div>
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">📍</div>
+                    <h3 class="text-xl font-semibold mb-3">Local Expertise</h3>
+                    <p class="text-gray-600 text-sm">We know the ICBC test routes in Kelowna inside and out, giving you the best chance of success.</p>
+                </div>
+                <div class="bg-gray-50 rounded-3xl p-8 step-card text-center">
+                    <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🤝</div>
+                    <h3 class="text-xl font-semibold mb-3">Proven Success</h3>
+                    <p class="text-gray-600 text-sm">With a high pass rate and dozens of happy students, our methods are tried and tested.</p>
                 </div>
             </div>
         </div>
