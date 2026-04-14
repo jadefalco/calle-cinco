@@ -364,10 +364,9 @@ body {
 </div>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden px-6 py-4 absolute w-full">
+<div id="mobile-menu" class="hidden md:hidden px-6 py-4 absolute top-full left-0">
     <div class="flex flex-col gap-y-2 text-sm font-medium">
         <a href="#how" onclick="closeMobileMenu()" class="py-2 hover:text-[#0066cc]">How It Works</a>
-        <a href="#approach" onclick="closeMobileMenu()" class="py-2 hover:text-[#0066cc]">Our Approach</a>
         <a href="#instructors" onclick="closeMobileMenu()" class="py-2 hover:text-[#0066cc]">Instructors</a>
         <a href="#packages" onclick="closeMobileMenu()" class="py-2 hover:text-[#0066cc]">Packages</a>
         <a href="#reviews" onclick="closeMobileMenu()" class="py-2 hover:text-[#0066cc]">Reviews</a>
@@ -413,7 +412,7 @@ body {
                     <button onclick="scrollToSection('contact')" 
                             class="bg-[#ECBE6B] text-gray-900 hover:brightness-110 font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 shadow-xl transition-all duration-300">
                         <i class="fa-solid fa-calendar-check"></i>
-                        BOOK YOUR FIRST LESSON
+                        CHECK AVAILABILITY
                     </button>
                     
                     <button onclick="scrollToSection('packages')" 
@@ -639,7 +638,7 @@ body {
                 <!-- Instructor 1: Dean -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person1.jpg" alt="Dean"
+                        <img src="images/person1.jpg" loading="lazy" alt="Dean"
                              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white text-sm leading-relaxed">Specializes in helping nervous beginners feel comfortable and confident behind the wheel.</p>
@@ -662,7 +661,7 @@ body {
                 <!-- Instructor 2: Sarah -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person8.jpg" alt="Sarah"
+                        <img src="images/person8.jpg" loading="lazy" alt="Sarah"
                              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white text-sm leading-relaxed">Great at building confidence for first-time drivers and nervous learners.</p>
@@ -685,7 +684,7 @@ body {
                 <!-- Instructor 3: Michael -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person2.jpg" alt="Michael"
+                        <img src="images/person2.jpg" loading="lazy" alt="Michael"
                              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white text-sm leading-relaxed">Knows Kelowna's ICBC test routes inside and out — your road test specialist.</p>
@@ -708,7 +707,7 @@ body {
                 <!-- Instructor 4: Jessica -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person9.jpg" alt="Jessica"
+                        <img src="images/person9.jpg" loading="lazy" alt="Jessica"
                              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0066cc]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white text-sm leading-relaxed">Detail-oriented approach helps students refine skills before their test.</p>
@@ -958,7 +957,6 @@ body {
                 <ul class="space-y-3 text-sm">
                     <li><a href="#packages" class="hover:text-white transition">Lesson Packages</a></li>
                     <li><a href="#how" class="hover:text-white transition">How It Works</a></li>
-                    <li><a href="#approach" class="hover:text-white transition">Our Approach</a></li>
                     <li><a href="#reviews" class="hover:text-white transition">Student Reviews</a></li>
                 </ul>
             </div>
