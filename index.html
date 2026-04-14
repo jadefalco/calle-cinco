@@ -329,7 +329,7 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium desktop-links">
                     <a href="#how" class="hover:text-yellow-400 transition">How It Works</a>
-                    <a href="#approach" class="hover:text-yellow-400 transition">Our Approach</a>
+                    <!-- <a href="#approach" class="hover:text-yellow-400 transition">Our Approach</a> -->
                     <a href="#instructors" class="hover:text-yellow-400 transition">Instructors</a>
                     <a href="#packages" class="hover:text-yellow-400 transition">Packages</a>
                     <a href="#reviews" class="hover:text-yellow-400 transition">Reviews</a>
@@ -453,51 +453,78 @@
 
     <!-- HOW IT WORKS -->
     <section id="how" class="py-20 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-16">
-                <span class="text-[#0066cc] font-medium tracking-widest text-sm uppercase">3 Simple Steps</span>
-                <h2 class="heading-font text-3xl md:text-4xl mt-3">From Nervous Beginner to Confident Driver</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Step 1 -->
-                <div class="bg-white rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0">
-                    <div class="w-12 h-12 md:w-16 md:h-16 md:mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6">
-                        <img src="images/steering_wheel_transparent.png" alt="Book" class="w-6 h-6 md:w-10 md:h-10 object-contain">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-lg md:text-2xl font-semibold mb-1 md:mb-3">1. Book Your Lesson</h3>
-                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">Call, text, or fill out the form. We reply within minutes and offer same-week availability.</p>
-                    </div>
-                </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16">
+      <span class="text-[#0066cc] font-medium tracking-widest text-sm uppercase">3 Simple Steps</span>
+      <h2 class="heading-font text-3xl md:text-4xl mt-3">From Nervous Beginner to Confident Driver</h2>
+    </div>
 
-                <!-- Step 2 -->
-                <div class="bg-white rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0">
-                    <div class="w-12 h-12 md:w-16 md:h-16 md:mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6">
-                        <img src="images/wheel.png" alt="Learn" class="w-6 h-6 md:w-10 md:h-10 object-contain">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-lg md:text-2xl font-semibold mb-1 md:mb-3">2. Learn With a Patient Instructor</h3>
-                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">Supportive, calm teaching style tailored to your pace — perfect for beginners and nervous drivers.</p>
-                    </div>
-                </div>
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
 
-                <!-- Step 3 -->
-                <div class="bg-white rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0 border-2 border-[#0066cc]">
-                    <div class="w-12 h-12 md:w-16 md:h-16 md:mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6">
-                        <img src="images/dashboard.png" alt="Pass" class="w-6 h-6 md:w-10 md:h-10 object-contain">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-lg md:text-2xl font-semibold mb-1 md:mb-3">3. Pass Your Road Test With Confidence</h3>
-                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">We prepare you for the exact ICBC test routes in Kelowna using our dual-control vehicle.</p>
-                        <span class="inline-block mt-2 md:mt-6 text-xs bg-[#0066cc] text-white px-4 py-1 rounded-3xl">Includes car for your test</span>
-                    </div>
-                </div>
-            </div>
+      <!-- Step 1 -->
+      <div class="bg-white rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0">
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="hover:scale-110 transition-transform duration-300 w-20 h-20 md:w-24 md:h-24 md:mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6 border-0 p-0 cursor-pointer" aria-label="Book your lesson">
+          
+          <!-- NORMALIZED ICON WRAPPER -->
+          <div class="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+            <img src="images/calendar.png" class="max-w-full max-h-full object-contain">
+          </div>
+
+        </button>
+
+        <div class="flex-1">
+          <h3 class="text-lg md:text-2xl font-semibold mb-1 md:mb-3">1. Book Your Lesson</h3>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+            Call, text, or fill out the form. We reply within minutes and offer same-week availability.
+          </p>
         </div>
-    </section>
+      </div>
 
-    <!-- OUR APPROACH - Hidden on mobile -->
+      <!-- Step 2 -->
+      <div class="bg-white rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0">
+        <div class="w-20 h-20 md:w-24 md:h-24 md:mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6">
+          
+          <div class="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+            <!-- ADD SLIGHT SCALE -->
+            <img src="images/wheel_transparent2.png" class="max-w-full max-h-full object-contain scale-110">
+          </div>
+
+        </div>
+
+        <div class="flex-1">
+          <h3 class="text-lg md:text-2xl font-semibold mb-1 md:mb-3">2. Learn With a Patient Instructor</h3>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+            Supportive, calm teaching style tailored to your pace — perfect for beginners and nervous drivers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-white rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0 border-2 border-[#0066cc]">
+        <div class="w-20 h-20 md:w-24 md:h-24 md:mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6">
+          
+          <div class="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+            <!-- MATCH SCALE -->
+            <img src="images/steering_wheel_transparent.png" class="max-w-full max-h-full object-contain scale-110">
+          </div>
+
+        </div>
+
+        <div class="flex-1">
+          <h3 class="text-lg md:text-2xl font-semibold mb-1 md:mb-3">3. Pass Your Road Test With Confidence</h3>
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+            We prepare you for the exact ICBC test routes in Kelowna using our dual-control vehicle.
+          </p>
+          <span class="inline-block mt-2 md:mt-6 text-xs bg-[#0066cc] text-white px-4 py-1 rounded-3xl">
+            Includes car for your test
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <!-- OUR APPROACH - Hidden on mobile 
     <section id="approach" class="hidden md:block py-20 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16">
@@ -529,7 +556,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- LESSON PACKAGES -->
     <section id="packages" class="py-20 md:py-24 bg-white">
