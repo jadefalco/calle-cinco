@@ -82,8 +82,83 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
+    /* ===== HAMBURGER MENU FIXES ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+/* Mobile menu button - initial state */
+#mobile-menu-button {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+}
+
+/* Hamburger icon */
+.hamburger-icon {
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+/* Steering wheel icon */
+.steering-wheel-icon {
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+}
+
+/* When menu is open - hamburger rotates out, steering wheel rotates in */
+#mobile-menu-button.menu-open .hamburger-icon {
+    display: none;
+}
+
+
+#mobile-menu-button.menu-open .steering-wheel-icon {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    display: inline-block !important;
+}
+
+
+/* Hamburger menu button color on scroll */
+#navbar.nav-scrolled #mobile-menu-button {
+    color: #0066cc;
+}
+
+/* Ensure hamburger is visible on hero (white text) */
+#navbar.nav-transparent #mobile-menu-button {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile menu styling */
+#mobile-menu {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure mobile menu closes properly */
+#mobile-menu.hidden {
+    display: none !important;
+}
+    
+
 
 .heading-font { font-family: 'Space Grotesk', sans-serif; }
 
@@ -165,11 +240,12 @@ html {
     object-fit: contain;
 }
 
-@media (max-width: 768px) {
-    .logo-img {
-        height: 56px;
+@media (min-width: 768px) {
+    #mobile-menu-button {
+        display: none !important;
     }
 }
+
 /* ===== INSTRUCTOR CARD STYLING ===== */
 
 /* Instructor Card Base */
@@ -304,7 +380,6 @@ img {
 }
 
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="tailwind-ready">
 
@@ -315,8 +390,8 @@ img {
             
             <!-- Logo -->
             <a href="#hero" class="flex items-center gap-x-3">
-    <img src="images/calle-cinco-logo.png" alt="Calle Cinco Driving School Logo" class="logo-img">
-</a>
+                <img src="images/calle-cinco-logo.png" alt="Calle Cinco Driving School Logo" class="logo-img">
+            </a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-white">
@@ -335,14 +410,15 @@ img {
                 </a>
 
                 <button onclick="scrollToSection('contact')" 
-        id="cta-button"
-        class="cta-btn px-6 py-3 rounded-3xl font-semibold text-sm transition-all duration-300">
-    BOOK LESSON
-</button>
+                        id="cta-button"
+                        class="cta-btn px-6 py-3 rounded-3xl font-semibold text-sm transition-all duration-300">
+                    BOOK LESSON
+                </button>
 
-                <!-- Mobile button -->
-                <button id="mobile-menu-button" class="md:hidden text-3xl text-white">
-                    <i class="fa-solid fa-bars"></i>
+                <!-- Mobile button with steering wheel animation -->
+                <button id="mobile-menu-button" class="md:hidden text-3xl text-white transition-all duration-500 hamburger-toggle">
+                    <i class="fa-solid fa-bars hamburger-icon"></i>
+                    <i class="fa-solid fa-steering-wheel steering-wheel-icon hidden absolute"></i>
                 </button>
             </div>
         </div>
@@ -1074,6 +1150,40 @@ document.getElementById('booking-form').addEventListener('submit', function(e) {
         btn.classList.remove('bg-[#0066cc]');
         btn.classList.add('bg-green-600');
     }, 1200);
+});
+</script>
+<script>
+// Hamburger menu toggle with steering wheel animation
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+
+mobileMenuButton.addEventListener('click', function() {
+    // Toggle menu visibility
+    mobileMenu.classList.toggle('hidden');
+    
+    // Toggle steering wheel animation
+    mobileMenuButton.classList.toggle('menu-open');
+});
+
+// Close menu when a link is clicked
+const menuLinks = mobileMenu.querySelectorAll('a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.classList.remove('menu-open');
+    });
+});
+
+// Navbar scroll effect for hamburger color
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('nav-scrolled');
+        navbar.classList.remove('nav-transparent');
+    } else {
+        navbar.classList.remove('nav-scrolled');
+        navbar.classList.add('nav-transparent');
+    }
 });
 </script>
 </body>
