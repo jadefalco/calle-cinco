@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap' );
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap');
         
         .heading-font { font-family: 'Space Grotesk', sans-serif; }
         
@@ -71,7 +71,7 @@
 
         /* Desktop nav links when scrolled (white background) */
         .nav-scrolled .hidden.md\:flex a {
-            color: #1f2937 !important; /* Force dark gray/black */
+            color: #1f2937 !important;
         }
 
         /* Also ensure phone number turns dark */
@@ -213,12 +213,19 @@
             height: 72px;
             width: auto;
             object-fit: contain;
+            transition: filter 0.3s ease;
         }
 
         @media (min-width: 768px) {
             #mobile-menu-button {
                 display: none !important;
             }
+        }
+
+        /* Mobile overflow fix */
+        body, html {
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         @media (max-width: 768px) {
@@ -277,146 +284,217 @@
 <body>
 
     <!-- NAVIGATION -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-transparent">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center py-5">
-                
-                <!-- Logo -->
-                <a href="#hero" class="flex items-center gap-x-3">
-                    <img src="images/calle-cinco-logo.png" alt="Calle Cinco Driving School Logo" class="logo-img brightness-0 invert">
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center py-5">
+            
+            <!-- Logo - Color version from start (no invert) -->
+            <a href="#hero" class="flex items-center gap-x-3">
+                <img src="images/calle-cinco-logo.png" alt="Calle Cinco Driving School" class="h-16 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Menu - White text initially -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#how" class="text-white hover:text-yellow-400 transition">How It Works</a>
+                <a href="#approach" class="text-white hover:text-yellow-400 transition">Our Approach</a>
+                <a href="#instructors" class="text-white hover:text-yellow-400 transition">Instructors</a>
+                <a href="#packages" class="text-white hover:text-yellow-400 transition">Packages</a>
+                <a href="#reviews" class="text-white hover:text-yellow-400 transition">Reviews</a>
+                <a href="#faq" class="text-white hover:text-yellow-400 transition">FAQ</a>
+            </div>
+
+            <!-- Right side -->
+            <div class="flex items-center gap-x-4">
+                <a href="tel:2503000552" class="hidden sm:flex items-center gap-x-2 text-sm font-medium text-white hover:text-yellow-400 transition">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(250) 300-0552</span>
                 </a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-white">
-                    <a href="#how" class="hover:text-yellow-400 transition">How It Works</a>
-                    <a href="#approach" class="hover:text-yellow-400 transition">Our Approach</a>
-                    <a href="#instructors" class="hover:text-yellow-400 transition">Instructors</a>
-                    <a href="#packages" class="hover:text-yellow-400 transition">Packages</a>
-                    <a href="#reviews" class="hover:text-yellow-400 transition">Reviews</a>
-                    <a href="#faq" class="hover:text-yellow-400 transition">FAQ</a>
-                </div>
+                <button onclick="scrollToSection('contact')" 
+                        id="cta-button"
+                        class="hidden md:block bg-[#ECBE6B] text-gray-900 px-6 py-3 rounded-3xl font-semibold text-sm hover:brightness-110 transition-all duration-300">
+                    BOOK LESSON
+                </button>
 
-                <!-- Right side -->
-                <div class="flex items-center gap-x-4">
-                    <a href="tel:2503000552" class="hidden sm:flex items-center gap-x-2 text-sm font-medium text-white hover:text-yellow-400">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>(250) 300-0552</span>
-                    </a>
-
-                    <button onclick="scrollToSection('contact')" 
-                            id="cta-button"
-                            class="hidden md:block cta-btn px-6 py-3 rounded-3xl font-semibold text-sm transition-all duration-300">
-                        BOOK LESSON
-                    </button>
-
-                    <!-- Mobile Toggle Button -->
-                    <button id="mobile-menu-button" aria-label="Toggle Menu">
-                        <div class="icon-wrapper">
-                            <i class="fa-solid fa-bars hamburger-icon"></i>
-                            <i class="fa-solid fa-dharmachakra steering-wheel-icon"></i>
-                        </div>
-                    </button>
-                </div>
+                <!-- Mobile Toggle Button -->
+                <button id="mobile-menu-button" class="md:hidden relative w-12 h-12 flex items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-all duration-300">
+                    <div class="relative w-6 h-6">
+                        <i class="fa-solid fa-bars absolute inset-0 flex items-center justify-center text-xl transition-all duration-500"></i>
+                        <i class="fa-solid fa-steering-wheel absolute inset-0 flex items-center justify-center text-xl opacity-0 rotate-[-180deg] scale-0 transition-all duration-500"></i>
+                    </div>
+                </button>
             </div>
         </div>
+    </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 py-4">
-            <div class="flex flex-col gap-y-1 text-sm font-medium">
-                <a href="#how" onclick="closeMobileMenu()">How It Works</a>
-                <a href="#approach" onclick="closeMobileMenu()">Our Approach</a>
-                <a href="#instructors" onclick="closeMobileMenu()">Instructors</a>
-                <a href="#packages" onclick="closeMobileMenu()">Packages</a>
-                <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
-                <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-                <a href="#contact" onclick="closeMobileMenu()" class="text-[#0066cc] font-bold">Book Now</a>
-                <div class="border-t border-gray-200 pt-4 mt-2">
-                    <a href="tel:2503000552" class="flex items-center gap-x-2 text-[#0066cc] font-semibold">
-                        <i class="fa-solid fa-phone"></i> (250) 300-0552
-                    </a>
-                </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-6 py-4 shadow-xl absolute w-full">
+        <div class="flex flex-col gap-y-2 text-sm font-medium">
+            <a href="#how" onclick="closeMobileMenu()" class="py-2 text-gray-800 hover:text-[#0066cc]">How It Works</a>
+            <a href="#approach" onclick="closeMobileMenu()" class="py-2 text-gray-800 hover:text-[#0066cc]">Our Approach</a>
+            <a href="#instructors" onclick="closeMobileMenu()" class="py-2 text-gray-800 hover:text-[#0066cc]">Instructors</a>
+            <a href="#packages" onclick="closeMobileMenu()" class="py-2 text-gray-800 hover:text-[#0066cc]">Packages</a>
+            <a href="#reviews" onclick="closeMobileMenu()" class="py-2 text-gray-800 hover:text-[#0066cc]">Reviews</a>
+            <a href="#faq" onclick="closeMobileMenu()" class="py-2 text-gray-800 hover:text-[#0066cc]">FAQ</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="py-2 text-[#0066cc] font-bold">Book Now</a>
+            <div class="border-t border-gray-200 pt-4 mt-2">
+                <a href="tel:2503000552" class="flex items-center gap-x-2 text-[#0066cc] font-semibold">
+                    <i class="fa-solid fa-phone"></i> (250) 300-0552
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- HERO -->
-    <header id="hero" class="hero-bg text-white pt-32 pb-20 md:py-28">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl">
-                    <i class="fa-solid fa-check-circle"></i>
-                    OPEN 7 DAYS A WEEK • ICBC ROAD TEST PREP
-                </div>
-                
-                <h1 class="heading-font text-5xl md:text-6xl leading-none tracking-tighter">
-                    Driving Lessons That Help You Pass With Confidence
-                </h1>
-                
-                <p class="text-xl md:text-2xl max-w-lg text-white/90">
-                    Patient, professional instruction in Kelowna — designed to help you become a safe, confident driver and pass your road test.
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <button onclick="scrollToSection('contact')" 
-                            class="bg-white text-[#0066cc] hover:bg-gray-100 font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-x-3 shadow-xl">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        BOOK YOUR FIRST LESSON
-                    </button>
-                    
-                    <button onclick="scrollToSection('packages')" 
-                            class="border-2 border-white hover:bg-white/10 font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-x-3 transition">
-                        VIEW LESSON PACKAGES
-                    </button>
-                </div>
-                
-                <!-- Trust signals -->
-                <div class="flex items-center gap-x-8 text-sm">
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-car-side text-3xl"></i>
-                        <div>
-                            <div class="font-semibold">ICBC Road Test Prep</div>
-                            <div class="text-white/80 text-xs">Includes car for your test</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-users text-3xl"></i>
-                        <div>
-                            <div class="font-semibold">Patient & Experienced Instructors</div>
-                            <div class="text-white/80 text-xs">Perfect for nervous beginners</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-clock text-3xl"></i>
-                        <div>
-                            <div class="font-semibold">Flexible Scheduling</div>
-                            <div class="text-white/80 text-xs">Evenings & weekends</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flex items-center gap-x-6 text-xs uppercase tracking-widest">
-                    <div class="flex -space-x-4">
-                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-[#0066cc] shadow">👍</div>
-                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-[#0066cc] shadow">🚗</div>
-                    </div>
-                    <div class="text-white/80">4.9/5 on Google • 100+ first-time passes</div>
-                </div>
+<!-- HERO -->
+<header id="hero" class="hero-bg text-white pt-32 pb-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+            <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl">
+                <i class="fa-solid fa-check-circle"></i>
+                OPEN 7 DAYS A WEEK • ICBC ROAD TEST PREP
             </div>
             
-            <!-- Hero visual -->
-            <div class="hidden md:block relative">
-                <img src="images/driving-school-student-and-instructor.jpg" alt="Student learning to drive with patient instructor in Kelowna" 
-                     class="rounded-3xl shadow-2xl rotate-[-3deg] w-full transform hover:scale-105 transition duration-500">
-                <div class="absolute -bottom-6 -right-6 bg-white text-[#0066cc] rounded-3xl px-6 py-4 shadow-2xl flex items-center gap-x-3">
-                    <i class="fa-solid fa-check text-3xl"></i>
-                    <div class="text-left">
-                        <div class="font-bold text-xl">Passed on first try!</div>
-                        <div class="text-sm">— Our students average 94% pass rate</div>
+            <h1 class="heading-font text-5xl md:text-6xl leading-none tracking-tighter">
+                Driving Lessons That Help You Pass With Confidence
+            </h1>
+            
+            <p class="text-xl md:text-2xl max-w-lg text-white/90">
+                Patient, professional instruction in Kelowna — designed to help you become a safe, confident driver and pass your road test.
+            </p>
+            
+            <!-- Buttons: Yellow (cta-btn) inline with White (outline) -->
+            <div class="flex flex-wrap gap-4">
+                <button onclick="scrollToSection('contact')" 
+                        class="bg-[#ECBE6B] text-gray-900 hover:brightness-110 font-semibold text-lg px-10 py-5 rounded-3xl flex items-center gap-x-3 shadow-xl transition-all duration-300">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    BOOK YOUR FIRST LESSON
+                </button>
+                
+                <button onclick="scrollToSection('packages')" 
+                        class="border-2 border-white hover:bg-white/10 font-semibold text-lg px-8 py-5 rounded-3xl flex items-center gap-x-3 transition">
+                    VIEW LESSON PACKAGES
+                </button>
+            </div>
+            
+            <!-- Trust signals -->
+            <div class="flex items-center gap-x-8 text-sm">
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-car-side text-3xl"></i>
+                    <div>
+                        <div class="font-semibold">ICBC Road Test Prep</div>
+                        <div class="text-white/80 text-xs">Includes car for your test</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-users text-3xl"></i>
+                    <div>
+                        <div class="font-semibold">Patient & Experienced</div>
+                        <div class="text-white/80 text-xs">Perfect for nervous beginners</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-clock text-3xl"></i>
+                    <div>
+                        <div class="font-semibold">Flexible Scheduling</div>
+                        <div class="text-white/80 text-xs">Evenings & weekends</div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+        
+        <!-- Hero image -->
+        <div class="hidden md:block relative">
+            <img src="images/driving-school-student-and-instructor.jpg" alt="Student learning to drive" 
+                 class="rounded-3xl shadow-2xl rotate-[-3deg] w-full hover:scale-105 transition duration-500">
+            <div class="absolute -bottom-6 -right-6 bg-white text-[#0066cc] rounded-3xl px-6 py-4 shadow-2xl flex items-center gap-x-3">
+                <i class="fa-solid fa-check text-3xl"></i>
+                <div>
+                    <div class="font-bold text-xl">Passed on first try!</div>
+                    <div class="text-sm">94% first-time pass rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    /* Nav fade to white on scroll */
+    #navbar {
+        transition: all 0.4s ease;
+    }
+    
+    #navbar.scrolled {
+        background: white;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    /* Links: white -> black */
+    #navbar.scrolled .hidden.md\:flex a {
+        color: #1f2937 !important;
+    }
+    
+    #navbar.scrolled a[href^="tel:"] {
+        color: #1f2937 !important;
+    }
+    
+    /* CTA: yellow -> blue */
+    #navbar.scrolled #cta-button {
+        background: #0066cc;
+        color: white;
+    }
+    
+    /* Mobile button: dark -> light blue */
+    #navbar.scrolled #mobile-menu-button {
+        background: rgba(0, 102, 204, 0.1);
+        color: #0066cc;
+    }
+    
+    /* Steering wheel spin animation */
+    #mobile-menu-button.active .fa-bars {
+        opacity: 0;
+        transform: rotate(180deg) scale(0);
+    }
+    
+    #mobile-menu-button.active .fa-steering-wheel {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+</style>
+
+<script>
+    // Single JavaScript block - no duplicates!
+    
+    // Scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        this.classList.toggle('active');
+    });
+    
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        menuBtn.classList.remove('active');
+    }
+    
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+<!-- HOW IT WORKS -->
 
     <!-- HOW IT WORKS -->
     <section id="how" class="py-20 bg-gray-50">
@@ -476,32 +554,6 @@
                     <div class="w-16 h-16 mx-auto bg-[#0066cc]/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🤝</div>
                     <h3 class="text-xl font-semibold mb-3">Proven Success</h3>
                     <p class="text-gray-600 text-sm">With a high pass rate and dozens of happy students, our methods are tried and tested.</p>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="images/driving-student.jpg" alt="Driving instructor teaching student" class="rounded-3xl shadow-2xl">
-                </div>
-                <div class="space-y-6">
-                    <h3 class="heading-font text-3xl">Expert Preparation for Your ICBC Road Test</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        The road test can be the most stressful part of learning to drive. Our specialized test preparation focuses on the specific skills and routes that ICBC examiners look for in Kelowna.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-x-3">
-                            <i class="fa-solid fa-circle-check text-[#0066cc]"></i>
-                            <span>Mock road tests to build confidence</span>
-                        </li>
-                        <li class="flex items-center gap-x-3">
-                            <i class="fa-solid fa-circle-check text-[#0066cc]"></i>
-                            <span>Specific feedback on parallel parking and shoulder checks</span>
-                        </li>
-                        <li class="flex items-center gap-x-3">
-                            <i class="fa-solid fa-circle-check text-[#0066cc]"></i>
-                            <span>Dual-control vehicle provided for your test day</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -719,6 +771,42 @@
         </div>
     </section>
 
+    <!-- ABOUT SECTION - RESTORED -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5">
+                <img src="images/checklist.jpg" alt="Driving checklist and preparation materials" 
+                     class="rounded-3xl shadow-2xl w-full">
+            </div>
+            <div class="md:col-span-7">
+                <h2 class="heading-font text-4xl mb-6">Our Passion Is Teaching You to Drive Safely & Confidently</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    At Calle Cinco Driving School, we believe everyone deserves to feel calm and capable behind the wheel. 
+                    Our instructors are patient, encouraging, and truly love helping nervous beginners become skilled, responsible drivers.
+                </p>
+                <div class="grid grid-cols-2 gap-8 text-sm">
+                    <div class="flex gap-x-4">
+                        <i class="fa-solid fa-heart text-3xl text-[#0066cc]"></i>
+                        <div>
+                            <div class="font-semibold">Learn at your own pace</div>
+                            <p class="text-gray-600">No pressure. We customize every lesson to your comfort level and skill set.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-x-4">
+                        <i class="fa-solid fa-shield-halved text-3xl text-[#0066cc]"></i>
+                        <div>
+                            <div class="font-semibold">Safety first, always</div>
+                            <p class="text-gray-600">ICBC-aligned training focused on real-world defensive driving.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-12 text-sm font-medium flex items-center gap-x-2">
+                    📍 1540 Feedham Ave, Kelowna, BC • Serving all of Kelowna & the Okanagan Valley
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- BOOKING SECTION -->
     <section id="contact" class="py-20 bg-[#0066cc] text-white">
         <div class="max-w-4xl mx-auto px-6">
@@ -726,7 +814,7 @@
                 <h2 class="heading-font text-5xl">Ready to Book Your First Lesson?</h2>
                 <p class="mt-4 text-2xl text-white/80">Call or text us — we answer fast and offer flexible times, including evenings and weekends.</p>
                 <a href="tel:2503000552" class="inline-flex items-center gap-x-3 mt-6 text-4xl font-medium hover:text-white/80">
-                    <i class="fa-solid fa-phone"></i> (250 ) 300-0552
+                    <i class="fa-solid fa-phone"></i> (250) 300-0552
                 </a>
                 <p class="text-sm mt-2">Call • Text • drive@callecinco.ca</p>
             </div>
@@ -792,11 +880,8 @@
                 <p class="text-center text-xs text-gray-500 mt-6">Takes 30 seconds • We'll confirm your time by call or text</p>
 
                 <div id="success-message" class="hidden mt-8 bg-green-50 border border-green-200 text-green-800 p-6 rounded-2xl text-center">
-                    ✅ Request received!  
-  
-
-                    We'll contact you shortly to confirm your lesson time.  
-
+                    ✅ Request received!<br><br>
+                    We'll contact you shortly to confirm your lesson time.<br>
                     <strong>(250) 300-0552</strong>
                 </div>
             </form>
@@ -804,7 +889,7 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-20 bg-white">
+    <section id="faq" class="py-20 bg-gray-50">
         <div class="max-w-3xl mx-auto px-6">
             <h2 class="heading-font text-4xl text-center mb-12">Frequently Asked Questions</h2>
             
@@ -833,9 +918,9 @@
     <footer class="bg-gray-900 text-gray-400 py-16">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
             <div>
-                <img src="images/calle-cinco-logo.png" class="h-10 w-auto brightness-0 invert mb-6">
-                <p class="text-sm">Patient driving instruction in Kelowna, BC.  
-Helping you pass your ICBC road test with confidence.</p>
+                <!-- Fixed footer logo - remove brightness/invert to show actual logo -->
+                <img src="images/calle-cinco-logo.png" class="h-10 w-auto mb-6">
+                <p class="text-sm">Patient driving instruction in Kelowna, BC.<br>Helping you pass your ICBC road test with confidence.</p>
             </div>
             <div>
                 <div class="font-medium text-white mb-4">Quick Links</div>
@@ -850,8 +935,7 @@ Helping you pass your ICBC road test with confidence.</p>
                 <div class="font-medium text-white mb-4">Contact</div>
                 <a href="tel:2503000552" class="block hover:text-white mb-2 transition">(250) 300-0552</a>
                 <a href="mailto:drive@callecinco.ca" class="block hover:text-white mb-2 transition">drive@callecinco.ca</a>
-                <p class="text-xs mt-4">1540 Feedham Ave  
-Kelowna, BC V1Y 7N9</p>
+                <p class="text-xs mt-4">1540 Feedham Ave<br>Kelowna, BC V1Y 7N9</p>
             </div>
             <div>
                 <div class="font-medium text-white mb-4">Follow Us</div>
@@ -864,7 +948,7 @@ Kelowna, BC V1Y 7N9</p>
     </footer>
 
     <!-- STICKY MOBILE BOOK BUTTON -->
-    <button onclick="scrollToSection('contact' )" 
+    <button onclick="scrollToSection('contact')" 
             class="fixed bottom-6 right-6 md:hidden bg-[#0066cc] text-white w-14 h-14 rounded-3xl shadow-2xl flex items-center justify-center text-3xl z-50">
         <i class="fa-solid fa-calendar"></i>
     </button>
@@ -883,27 +967,28 @@ Kelowna, BC V1Y 7N9</p>
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
                 navbar.classList.remove('nav-transparent');
-                navbar.classList.add('nav-scrolled', 'bg-white', 'shadow-md');
+                navbar.classList.add('nav-scrolled');
+                
+                // Logo becomes color when scrolled (remove invert)
                 logo.classList.remove('brightness-0', 'invert');
+                
+                // CTA becomes blue with pulse
                 cta.classList.add('cta-scrolled');
                 cta.classList.remove('cta-btn');
             } else {
                 navbar.classList.add('nav-transparent');
-                navbar.classList.remove('nav-scrolled', 'bg-white', 'shadow-md');
+                navbar.classList.remove('nav-scrolled');
+                
+                // Logo becomes white when at top (add invert)
                 logo.classList.add('brightness-0', 'invert');
+                
+                // CTA becomes yellow
                 cta.classList.remove('cta-scrolled');
                 cta.classList.add('cta-btn');
             }
         });
 
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            this.classList.toggle('menu-open');
-        });
+       
 
         function closeMobileMenu() {
             mobileMenu.classList.add('hidden');
