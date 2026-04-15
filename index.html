@@ -393,23 +393,26 @@ body {
     <!-- HERO -->
     <header id="hero" class="hero-bg text-white pt-32 pb-20 md:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 md:space-y-8">
+            <div class="space-y-6 md:space-y-8 text-center md:text-left">
                 <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl">
                     <i class="fa-solid fa-check-circle"></i>
                     OPEN 7 DAYS A WEEK • ICBC ROAD TEST PREP
                 </div>
-                
-                <h1 class="heading-font text-4xl md:text-5xl lg:text-6xl leading-none tracking-tighter text-[#ECBE6B]">
-                    Calle Cinco Driving School
-                </h1>
-                
-                <p class="text-lg md:text-xl lg:text-2xl max-w-lg text-white/90">
-                    Patient, professional instruction in Kelowna — designed so you can become a safe, confident driver and pass your road test.
-                </p>
+
+    
+    <!-- Add text-center md:text-left to the h1 -->
+<h1 class="heading-font text-4xl md:text-5xl lg:text-6xl leading-none tracking-tighter text-[#ECBE6B] text-center md:text-left">
+            Calle Cinco Driving School
+    </h1>
+    
+    <!-- Add text-center md:text-left to the p, and remove max-w-lg or keep it centered -->
+<p class="text-lg md:text-xl lg:text-2xl max-w-lg mx-auto md:mx-0 text-white/90 text-center md:text-left">
+            Patient, professional instruction in Kelowna — designed so you can become a safe, confident driver and pass your road test.
+    </p>
                 
                 <!-- Buttons -->
-                <div class="flex flex-wrap gap-4">
-                    <button onclick="scrollToSection('contact')" 
+<div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <button onclick="scrollToSection('contact')" 
                             class="bg-[#ECBE6B] text-gray-900 hover:brightness-110 font-semibold text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 shadow-xl transition-all duration-300">
                         <i class="fa-solid fa-calendar-check"></i>
                         CHECK AVAILABILITY
@@ -422,31 +425,33 @@ body {
                 </div>
                 
                 <!-- Trust signals -->
-                <div class="flex flex-wrap items-center gap-4 md:gap-6 lg:gap-x-8 text-sm pt-2">
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-car-side text-2xl md:text-3xl"></i>
-                        <div>
-                            <div class="font-semibold">ICBC Road Test Prep</div>
-                            <div class="text-white/80 text-xs">Includes car for your test</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-users text-2xl md:text-3xl"></i>
-                        <div>
-                            <div class="font-semibold">Patient & Experienced</div>
-                            <div class="text-white/80 text-xs">Perfect for nervous beginners</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-clock text-2xl md:text-3xl"></i>
-                        <div>
-                            <div class="font-semibold">Flexible Scheduling</div>
-                            <div class="text-white/80 text-xs">Evenings & weekends</div>
-                        </div>
-                    </div>
-                </div>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 lg:gap-x-8 text-sm pt-2">
+    <div class="flex items-center gap-x-2">
+        <i class="fa-solid fa-car-side text-2xl md:text-3xl"></i>
+        <div>
+            <div class="font-semibold">ICBC Road Test Prep</div>
+            <div class="text-white/80 text-xs">Includes car for your test</div>
+        </div>
+    </div>
+    <div class="flex items-center gap-x-2">
+        <i class="fa-solid fa-users text-2xl md:text-3xl"></i>
+        <div>
+            <div class="font-semibold">Patient & Experienced</div>
+            <div class="text-white/80 text-xs">Perfect for nervous beginners</div>
+        </div>
+    </div>
+    <div class="flex items-center gap-x-2">
+        <i class="fa-solid fa-clock text-2xl md:text-3xl"></i>
+        <div>
+            <div class="font-semibold">Flexible Scheduling</div>
+            <div class="text-white/80 text-xs">Evenings & weekends</div>
+        </div>
+    </div>
+</div>
             </div>
-            
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+    <!-- buttons stay the same -->
+</div>
             <!-- Hero image with floating animation -->
             <div class="hidden md:block relative">
                 <img src="images/driving-school-student-and-instructor.jpg" alt="Student learning to drive" 
