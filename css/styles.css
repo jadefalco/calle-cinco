@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@500;700&display=swap');
+
+.heading-font { 
+    font-family: 'DM Sans', sans-serif; 
+    letter-spacing: -0.02em;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== FLOATING ANIMATION ===== */
+@keyframes float {
+    0%, 100% { transform: rotate(-3deg) translateY(0px); }
+    50% { transform: rotate(-3deg) translateY(-20px); }
+}
+
+.hero-image-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ===== NAVBAR STATES ===== */
+#navbar {
+    transition: all 0.4s ease;
+}
+
+/* Default state (at top - invisible, black text for blue sky photo) */
+#navbar.nav-transparent {
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+#navbar.nav-transparent .desktop-links a {
+    color: #000000 !important;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.8) !important;
+}
+
+#navbar.nav-transparent .phone-link {
+    color: #000000 !important;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.8) !important;
+}
+
+.nav-transparent #mobile-menu-button {
+    background: rgba(0, 0, 0, 0.15);
+    color: #000000;
+}
+
+/* Scrolled state (white background) */
+#navbar.nav-scrolled {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+#navbar.nav-scrolled .desktop-links a {
+    color: #1f2937 !important;
+}
+
+#navbar.nav-scrolled .phone-link {
+    color: #1f2937 !important;
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+#mobile-menu-button {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.nav-transparent #mobile-menu-button {
+    background: rgba(0, 0, 0, 0.15);
+    color: #000000;
+}
+
+.nav-scrolled #mobile-menu-button {
+    background: rgba(185, 28, 28, 0.1);
+    color: #B91C1C;
+}
+
+/* ===== HAMBURGER & STEERING WHEEL ICONS ===== */
+.icon-wrapper {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.hamburger-icon,
+.steering-wheel-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.steering-wheel-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+    object-fit: contain;
+    pointer-events: none;
+    filter: brightness(0) invert(1);
+}
+
+/* When transparent - make steering wheel black */
+.nav-transparent #mobile-menu-button .steering-wheel-icon {
+    filter: brightness(0);
+}
+
+/* When scrolled - make steering wheel red */
+.nav-scrolled #mobile-menu-button .steering-wheel-icon {
+    filter: brightness(0) sepia(1) hue-rotate(-50deg) saturate(5);
+}
+
+/* When menu is open - hamburger spins out, steering wheel spins in */
+#mobile-menu-button.menu-open .hamburger-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+}
+
+#mobile-menu-button.menu-open .steering-wheel-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* ===== MOBILE MENU ===== */
+#mobile-menu {
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+#mobile-menu a {
+    color: #1f2937 !important;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    transition: color 0.2s;
+}
+
+#mobile-menu a:hover {
+    color: #B91C1C !important;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#mobile-menu:not(.hidden) {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* ===== HERO SECTION — NO OVERLAY ===== */
+.hero-section {
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== HERO TEXT ===== */
+#hero h1 {
+    color: #000000 !important;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.9), 
+                 0 4px 20px rgba(255,255,255,0.7) !important;
+}
+
+#hero h1 .text-yellow {
+    color: #F59E0B !important;
+    font-weight: 800;
+}
+
+#hero h1 .text-red {
+    color: #B91C1C !important;
+    font-weight: 800;
+}
+
+#hero p {
+    color: #000000 !important;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(255,255,255,0.95), 
+                 0 0 12px rgba(255,255,255,0.8) !important;
+}
+
+#hero p .text-red {
+    color: #B91C1C !important;
+    font-weight: 700;
+}
+
+/* ===== BADGE — white text ===== */
+#hero .inline-flex.bg-red-700 {
+    color: #ffffff !important;
+}
+
+/* ===== PRIMARY BUTTON — yellow text on red ===== */
+#hero a.bg-red-700 {
+    color: #FBBF24 !important;
+    text-shadow: none !important;
+}
+
+/* ===== SECONDARY BUTTON — white text, yellow border, dark bg ===== */
+#hero a.border-amber-400 {
+    color: #ffffff !important;
+    border-color: #FBBF24 !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: blur(4px);
+}
+
+/* ===== BOTTOM FEATURES — white text ===== */
+#hero .font-bold {
+    color: #ffffff !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
+}
+
+#hero [class*="text-amber-400/90"] {
+    color: #ffffff !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
+}
+
+/* ===== SOCIAL PROOF CARD — white text ===== */
+#hero .absolute.bg-red-700 {
+    color: #ffffff !important;
+}
+
+#hero .absolute.bg-red-700 [class*="text-amber-400/90"] {
+    color: #ffffff !important;
+}
+
+/* ===== ICONS stay yellow ===== */
+#hero i.text-amber-400,
+#hero i[class*="text-amber-400"] {
+    color: #FBBF24 !important;
+}
+
+/* ===== CARDS ===== */
+.step-card,
+.package-card {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+}
+
+.step-card:hover,
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(185,28,28,0.1), 0 10px 20px rgba(185,28,28,0.05);
+}
+
+.instructor-card {
+    transition: all 0.3s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-8px);
+}
+
+.instructor-card img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.instructor-card:hover img {
+    transform: scale(1.1);
+}
+
+.logo-img {
+    height: 84px;
+    width: auto;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    #mobile-menu-button {
+        display: none !important;
+    }
+}
+
+/* Mobile overflow fix */
+body, html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .max-w-7xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+    
+    h2.heading-font {
+        font-size: 1.875rem;
+    }
+    
+    .logo-img {
+        height: 48px;
+    }
+}
+
+/* CAR COLORS */
+:root {
+    --car-red: #B91C1C;
+    --car-red-dark: #991B1B;
+    --car-yellow: #F59E0B;
+    --car-yellow-light: #FEF3C7;
+}
+
+.cta-btn {
+    background: var(--car-red);
+    color: white;
+    transition: all 0.4s ease;
+    font-weight: 700;
+}
+
+.cta-scrolled {
+    background: var(--car-red);
+    color: white;
+    position: relative;
+}
+
+.cta-scrolled::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    background: rgba(245, 158, 11, 0.4);
+    z-index: -1;
+    opacity: 0;
+    animation: pulseGlow 4s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { opacity: 0; transform: scale(1); }
+    70% { opacity: 0; transform: scale(1); }
+    75% { opacity: 0.5; transform: scale(1.1); }
+    85% { opacity: 0; transform: scale(1.4); }
+    100% { opacity: 0; transform: scale(1.4); }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+details > summary {
+    list-style: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #B91C1C;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #991B1B;
+}
+
+.nav-active {
+    color: #B91C1C !important;
+    font-weight: 700;
+}
+
+.text-red {
+    color: #B91C1C;
+}
+
+/* ===== SUB-PAGE HERO STYLES ===== */
+.sub-page-hero { position: relative; }
+.sub-page-hero h1 { color: #000000 !important; text-shadow: 0 2px 10px rgba(255,255,255,0.9), 0 4px 20px rgba(255,255,255,0.7) !important; }
+.sub-page-hero p { color: #000000 !important; font-weight: 500; text-shadow: 0 1px 4px rgba(255,255,255,0.95), 0 0 12px rgba(255,255,255,0.8) !important; }
+.sub-page-hero a.bg-red-700 { color: #FBBF24 !important; text-shadow: none !important; }
+.sub-page-hero a.border-amber-400 { color: #ffffff !important; border-color: #FBBF24 !important; }
+.sub-page-hero .inline-flex.bg-red-700 { color: #ffffff !important; }
+.text-yellow {
+    color: #F59E0B;
+}
+
+/* White glow for black text on bright photo */
+.hero-text-shadow {
+    text-shadow: 0 2px 8px rgba(255,255,255,0.9), 0 4px 16px rgba(255,255,255,0.7);
+}
+
+.blog-card {
+    transition: all 0.3s ease;
+}
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ===== SUB-PAGE HERO: Light top overlay for busy street photos ===== */
+.sub-page-hero {
+    position: relative;
+}
+
+.sub-page-hero h1 {
+    color: #000000 !important;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.9), 
+                 0 4px 20px rgba(255,255,255,0.7) !important;
+}
+
+.sub-page-hero p {
+    color: #000000 !important;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(255,255,255,0.95), 
+                 0 0 12px rgba(255,255,255,0.8) !important;
+}
+
+/* Sub-page buttons */
+.sub-page-hero a.bg-red-700 {
+    color: #FBBF24 !important;
+    text-shadow: none !important;
+}
+
+.sub-page-hero a.border-amber-400 {
+    color: #ffffff !important;
+    border-color: #FBBF24 !important;
+}
+
+/* Badge stays white on red */
+.sub-page-hero .inline-flex.bg-red-700 {
+    color: #ffffff !important;
+}

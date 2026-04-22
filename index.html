@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calle Cinco Driving School Kelowna - Patient, expert instruction for nervous beginners. ICBC road test preparation with 94% first-time pass rate. Book your lesson today.">
-    <meta name="keywords" content="driving school Kelowna, patient driving lessons, ICBC road test prep Kelowna, nervous driver training, beginner driving school Okanagan">
-    <title>Calle Cinco Driving School | Patient Expert Instruction in Kelowna</title>
+    <meta name="description" content="Calle Cinco Driving School Kelowna - Patient, expert instruction for nervous beginners. ICBC road test preparation with the majority of students passing on their first take. Book your driving lessons today.">
+    <title>Driving School Kelowna | Calle Cinco - Patient Expert Instruction</title>
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "DrivingSchool",
       "name": "Calle Cinco Driving School",
-      "description": "Patient, expert driving instruction in Kelowna specializing in nervous beginners and ICBC road test preparation with 94% first-time pass rate.",
+      "description": "Patient, expert driving instruction in Kelowna specializing in nervous beginners and ICBC road test preparation with the majority of students passing on their first take.",
       "url": "https://callecinco.ca",
       "telephone": "+1-250-300-0552",
       "email": "drive@callecinco.ca",
@@ -49,466 +48,85 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@500;700&display=swap');        
-        .heading-font { 
-    font-family: 'DM Sans', sans-serif; 
-    letter-spacing: -0.02em;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-}
-        
-        /* NO FILTER HERO - Just the image */
-        .hero-bg {
-            background: url('images/open-road.jpg') center/cover no-repeat;
-            position: relative;
-        }
-        
-        /* Text shadow for readability without overlay */
-        .hero-text-shadow {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        /* ===== FLOATING ANIMATION ===== */
-        @keyframes float {
-            0%, 100% { transform: rotate(-3deg) translateY(0px); }
-            50% { transform: rotate(-3deg) translateY(-20px); }
-        }
-
-        .hero-image-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* ===== NAVBAR STATES ===== */
-        #navbar {
-            transition: all 0.4s ease;
-        }
-        
-        /* Default state (at top - transparent) */
-        #navbar.nav-transparent {
-            background: transparent;
-        }
-        
-        #navbar.nav-transparent .desktop-links a {
-            color: white;
-        }
-        
-        #navbar.nav-transparent .phone-link {
-            color: white;
-        }
-
-        /* Scrolled state (white background) */
-        #navbar.nav-scrolled {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        #navbar.nav-scrolled .desktop-links a {
-            color: #1f2937 !important;
-        }
-        
-        #navbar.nav-scrolled .phone-link {
-            color: #1f2937 !important;
-        }
-
-        /* ===== MOBILE MENU BUTTON ===== */
-        #mobile-menu-button {
-            position: relative;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 50;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-transparent #mobile-menu-button {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(8px);
-            color: white;
-        }
-
-        .nav-scrolled #mobile-menu-button {
-            background: rgba(185, 28, 28, 0.1);
-            color: #B91C1C;
-        }
-
-        /* ===== HAMBURGER & STEERING WHEEL ICONS ===== */
-        .icon-wrapper {
-            position: relative;
-            width: 40px;
-            height: 40px;
-        }
-
-        .hamburger-icon,
-        .steering-wheel-icon {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .hamburger-icon {
-            opacity: 1;
-            transform: rotate(0deg) scale(1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .steering-wheel-icon {
-            opacity: 0;
-            transform: rotate(-180deg) scale(0);
-            object-fit: contain;
-            pointer-events: none;
-            /* White when on dark/transparent background */
-            filter: brightness(0) invert(1);
-        }
-
-        /* When scrolled - make steering wheel red */
-        .nav-scrolled #mobile-menu-button .steering-wheel-icon {
-            filter: brightness(0) sepia(1) hue-rotate(-50deg) saturate(5);
-        }
-
-        /* When menu is open - hamburger spins out, steering wheel spins in */
-        #mobile-menu-button.menu-open .hamburger-icon {
-            opacity: 0;
-            transform: rotate(180deg) scale(0);
-        }
-
-        #mobile-menu-button.menu-open .steering-wheel-icon {
-            opacity: 1;
-            transform: rotate(0deg) scale(1);
-        }
-
-        /* ===== MOBILE MENU ===== */
-        #mobile-menu {
-            background: white;
-            border-top: 1px solid #e5e7eb;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        #mobile-menu a {
-            color: #1f2937 !important;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f3f4f6;
-            transition: color 0.2s;
-        }
-
-        #mobile-menu a:hover {
-            color: #B91C1C !important;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        #mobile-menu:not(.hidden) {
-            animation: slideDown 0.3s ease-out;
-        }
-
-        /* ===== CARDS ===== */
-        .step-card,
-        .package-card {
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-        }
-
-        .step-card:hover,
-        .package-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(185,28,28,0.1), 0 10px 20px rgba(185,28,28,0.05);
-        }
-
-        .instructor-card {
-            transition: all 0.3s ease;
-        }
-
-        .instructor-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .instructor-card img {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .instructor-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .logo-img {
-            height: 84px;
-            width: auto;
-            object-fit: contain;
-            transition: filter 0.3s ease;
-        }
-
-        @media (min-width: 768px) {
-            #mobile-menu-button {
-                display: none !important;
-            }
-        }
-
-        /* Mobile overflow fix */
-        body, html {
-            overflow-x: hidden;
-            max-width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .max-w-7xl {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            header h1 {
-                font-size: 2.25rem;
-                line-height: 1.2;
-            }
-            
-            h2.heading-font {
-                font-size: 1.875rem;
-            }
-            
-            .logo-img {
-                height: 48px;
-            }
-        }
-
-        /* CAR COLORS - Deep Red and Golden Yellow */
-        :root {
-            --car-red: #B91C1C;
-            --car-red-dark: #991B1B;
-            --car-yellow: #F59E0B;
-            --car-yellow-light: #FEF3C7;
-        }
-
-        .cta-btn {
-            background: var(--car-red);
-            color: white;
-            transition: all 0.4s ease;
-            font-weight: 700;
-        }
-
-        .cta-scrolled {
-            background: var(--car-red);
-            color: white;
-            position: relative;
-        }
-
-        .cta-scrolled::after {
-            content: "";
-            position: absolute;
-            inset: -4px;
-            border-radius: 9999px;
-            background: rgba(245, 158, 11, 0.4);
-            z-index: -1;
-            opacity: 0;
-            animation: pulseGlow 4s infinite;
-        }
-
-        @keyframes pulseGlow {
-            0% { opacity: 0; transform: scale(1); }
-            70% { opacity: 0; transform: scale(1); }
-            75% { opacity: 0.5; transform: scale(1.1); }
-            85% { opacity: 0; transform: scale(1.4); }
-            100% { opacity: 0; transform: scale(1.4); }
-        }
-
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Details element styling */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-        
-        /* Custom scrollbar matching car red */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #B91C1C;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #991B1B;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-gray-50">
 
-    <!-- NAVIGATION -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 nav-transparent">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center py-4">
-                
-                <!-- Logo -->
-                <a href="#hero" class="flex items-center gap-x-3">
-                    <img src="images/calle-cinco-logo.png" alt="Calle Cinco Driving School" class="logo-img">
-                </a>
+    <div id="header-placeholder"></div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium desktop-links">
-                    <a href="#how" class="hover:text-amber-400 transition">How It Works</a>
-                    <a href="#instructors" class="hover:text-amber-400 transition">Instructors</a>
-                    <a href="#packages" class="hover:text-amber-400 transition">Packages</a>
-                    <a href="#reviews" class="hover:text-amber-400 transition">Reviews</a>
-                    <a href="#faq" class="hover:text-amber-400 transition">FAQ</a>
-                </div>
-
-                <!-- Right side -->
-                <div class="flex items-center gap-x-2 md:gap-x-4">
-                    <!-- Book Button -->
-                    <button onclick="scrollToSection('contact')" 
-                            id="cta-button"
-                            class="hidden md:block cta-btn px-6 py-3 rounded-3xl font-semibold text-sm hover:brightness-110 transition-all duration-300 shadow-lg">
-                        BOOK YOUR LESSON
-                    </button>
-
-                    <!-- Mobile Toggle Button -->
-                    <button id="mobile-menu-button" class="relative w-12 h-12 flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300">
-                        <div class="icon-wrapper relative w-10 h-10">
-                            <i class="fa-solid fa-bars hamburger-icon absolute inset-0 flex items-center justify-center text-2xl"></i>
-                            <img src="images/steering_wheel_transparent.png" alt="Close menu" class="steering-wheel-icon absolute inset-0 w-full h-full object-contain">
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 py-4 absolute top-full left-0 w-full">
-            <div class="flex flex-col gap-y-2 text-sm font-medium">
-                <a href="#how" onclick="closeMobileMenu()" class="py-2 hover:text-red-700">How It Works</a>
-                <a href="#instructors" onclick="closeMobileMenu()" class="py-2 hover:text-red-700">Instructors</a>
-                <a href="#packages" onclick="closeMobileMenu()" class="py-2 hover:text-red-700">Packages</a>
-                <a href="#reviews" onclick="closeMobileMenu()" class="py-2 hover:text-red-700">Reviews</a>
-                <a href="#faq" onclick="closeMobileMenu()" class="py-2 hover:text-red-700">FAQ</a>
-                <a href="#contact" onclick="closeMobileMenu()" class="py-2 text-red-700 font-bold">Book Now</a>
-
-                <div class="border-t border-gray-200 pt-4 mt-2 flex flex-col gap-3">
-                    <!-- Call -->
-                    <a href="tel:2503000552" class="flex items-center gap-x-2 text-red-700 font-semibold">
-                        <i class="fa-solid fa-phone"></i> (250) 300-0552
-                    </a>
-
-                    <!-- Text -->
-                    <a href="sms:12503000552?body=Hi%20I'm%20interested%20in%20driving%20lessons" 
-                       class="flex items-center gap-x-2 bg-red-700 text-white px-4 py-2 rounded-2xl font-semibold justify-center shadow-md">
-                        <i class="fa-solid fa-comment"></i> Text Us Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO - NO FILTER, JUST THE IMAGE -->
-    <header id="hero" class="hero-bg text-white pt-32 pb-20 md:py-28">
-        <!-- Dark gradient overlay only at bottom for text readability -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-        
+    <!-- HERO -->
+<header id="hero" class="relative text-amber-400 pt-32 pb-20 md:py-28" style="background: url('images/open-road.jpg') center/cover no-repeat;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
             
-            <!-- LEFT COLUMN: Text Content -->
+            <!-- LEFT CONTENT -->
             <div class="space-y-6 md:space-y-8 text-center md:text-left">
                 
-                <!-- Badge - Red with Yellow Icon -->
-                <div class="inline-flex items-center gap-x-2 bg-red-700 backdrop-blur-sm text-white text-sm font-semibold px-5 py-2 rounded-3xl shadow-lg hero-text-shadow">
-                    <i class="fa-solid fa-check-circle text-amber-400"></i>
-                    94% FIRST-TIME PASS RATE • OPEN 7 DAYS
+<div class="inline-flex items-center gap-x-2 bg-red-700 text-amber-400 text-sm font-semibold px-5 py-2 rounded-3xl shadow-lg hero-text-shadow">                    <i class="fa-solid fa-check-circle text-amber-400"></i>
+                    HIGH SUCCESS ON FIRST TAKE • OPEN 7 DAYS
                 </div>
 
-                <!-- Title -->
-                <h1 class="heading-font text-4xl md:text-5xl lg:text-6xl leading-tight text-white hero-text-shadow">
-                    From Anxious to Accomplished. Master the Road with Confidence.
-                </h1>
-                
-                <!-- Description -->
-                <p class="text-lg md:text-xl lg:text-2xl max-w-lg mx-auto md:mx-0 text-white leading-relaxed hero-text-shadow">
-                    Patient, professional instruction in Kelowna designed specifically for nervous beginners. Finally enjoy driving—and pass your ICBC road test the first time.
+<h1 class="heading-font text-4xl md:text-5xl lg:text-6xl leading-tight hero-text-shadow">
+    From Anxious to <span class="text-yellow">ACCOMPLISHED.</span><br>
+    Master the Road with <span class="text-red">CONFIDENCE.</span>
+</h1>                
+                <p class="text-lg md:text-xl lg:text-2xl max-w-lg mx-auto md:mx-0 leading-relaxed hero-text-shadow">
+                    Patient, professional driving lessons in Kelowna designed specifically for nervous beginners. Finally enjoy driving—and pass your <span class="text-red">ICBC road test</span> the first time.
                 </p>
+            
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="contact.html" 
+<a href="contact.html" class="bg-red-700 text-amber-400 hover:bg-red-800 font-bold text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 shadow-xl transition-all duration-300 transform hover:scale-105">                    <i class="fa-solid fa-calendar-check text-amber-400"></i>
+                    BOOK YOUR FIRST LESSON
+                </a>
                 
-                <!-- Buttons -->
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <button onclick="scrollToSection('contact')" 
-                            class="bg-red-700 text-white hover:bg-red-800 font-bold text-base md:text-lg px-8 md:px-10 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 shadow-xl transition-all duration-300 transform hover:scale-105">
-                        <i class="fa-solid fa-calendar-check text-amber-400"></i>
-                        BOOK YOUR FIRST LESSON
-                    </button>
-                    
-                    <button onclick="scrollToSection('packages')" 
-                            class="border-2 border-white bg-white/10 hover:bg-white/20 font-semibold text-base md:text-lg px-6 md:px-8 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 transition backdrop-blur-sm hero-text-shadow">
-                        VIEW PRICING
-                    </button>
+                <a href="driving-lessons-kelowna.html" 
+<a href="driving-lessons-kelowna.html" class="border-2 border-amber-400 bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 font-semibold text-base md:text-lg px-6 md:px-8 py-4 md:py-5 rounded-3xl flex items-center gap-x-3 transition backdrop-blur-sm">                    VIEW SERVICES
+                </a>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 lg:gap-x-8 text-sm pt-2">
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-car-side text-2xl md:text-3xl text-amber-400"></i>
+                    <div class="text-left">
+                        <div class="font-bold">ICBC Test Experts</div>
+                        <div class="text-amber-400/90 text-xs">Car included for your test</div>
+                    </div>
                 </div>
-                
-                <!-- Trust signals - Yellow Icons -->
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 lg:gap-x-8 text-sm pt-2 hero-text-shadow">
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-car-side text-2xl md:text-3xl text-amber-400"></i>
-                        <div class="text-left">
-                            <div class="font-bold">ICBC Test Experts</div>
-                            <div class="text-white/90 text-xs">Car included for your test</div>
-                        </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-heart text-2xl md:text-3xl text-amber-400"></i>
+                    <div class="text-left">
+                        <div class="font-bold">Nervous Driver Specialists</div>
+                        <div class="text-amber-400/90 text-xs">Zero judgment, endless patience</div>
                     </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-heart text-2xl md:text-3xl text-amber-400"></i>
-                        <div class="text-left">
-                            <div class="font-bold">Nervous Driver Specialists</div>
-                            <div class="text-white/90 text-xs">Zero judgment, endless patience</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-shield-check text-2xl md:text-3xl text-amber-400"></i>
-                        <div class="text-left">
-                            <div class="font-bold">Dual-Control Safety</div>
-                            <div class="text-white/90 text-xs">You're always protected</div>
-                        </div>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-shield-check text-2xl md:text-3xl text-amber-400"></i>
+                    <div class="text-left">
+                        <div class="font-bold">Dual-Control Safety</div>
+                        <div class="text-amber-400/90 text-xs">You're always protected</div>
                     </div>
                 </div>
             </div>
-            
-            <!-- RIGHT COLUMN: Hero Image (hidden on mobile, visible on desktop) -->
-            <div class="hidden md:block relative">
-                <img src="images/driving-school-student-and-instructor.jpg" alt="Student learning to drive with patient instructor" 
-                     class="rounded-3xl shadow-2xl w-full hero-image-float">
-                <div class="absolute -bottom-6 -right-6 bg-red-700 text-white rounded-3xl px-6 py-4 shadow-2xl flex items-center gap-x-3 border-4 border-amber-400">
-                    <div class="bg-amber-400 rounded-full p-2">
-                        <i class="fa-solid fa-check text-2xl text-red-800"></i>
-                    </div>
-                    <div>
-                        <div class="font-bold text-lg">Passed on first try!</div>
-                        <div class="text-sm text-white/90">Join 200+ successful students</div>
-                    </div>
-                </div>
-            </div>
-            
         </div>
-    </header>
+        
+        <!-- RIGHT IMAGE (FIXED) -->
+        <div class="hidden md:block relative">
+            <img src="images/driving-school-student-and-instructor.jpg" 
+                 alt="Driving lesson with instructor and student in Kelowna" 
+                 class="rounded-3xl shadow-2xl w-full hero-image-float">
+                 
+            <div class="absolute -bottom-6 -right-6 bg-red-700 text-amber-400 rounded-3xl px-6 py-4 shadow-2xl flex items-center gap-x-3 border-4 border-amber-400">
+                <div class="bg-amber-400 rounded-full p-2">
+                    <i class="fa-solid fa-check text-2xl text-red-800"></i>
+                </div>
+                <div>
+                    <div class="font-bold text-lg">Passed on first try!</div>
+<div class="text-sm text-amber-400/90">Join 200+ successful students</div>                </div>
+            </div>
+        </div>
+        
+    </div>
+</header>
 
     <!-- HOW IT WORKS -->
     <section id="how" class="py-20 md:py-24 bg-white">
@@ -520,13 +138,12 @@ body {
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Step 1 -->
                 <div class="bg-gray-50 rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0 border border-gray-100">
-                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="hover:scale-110 transition-transform duration-300 w-20 h-20 md:w-24 md:h-24 md:mx-auto bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6 border-0 p-0 cursor-pointer" aria-label="Book your lesson">
+                    <a href="contact.html" class="hover:scale-110 transition-transform duration-300 w-20 h-20 md:w-24 md:h-24 md:mx-auto bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6 border-0 p-0" aria-label="Book your lesson">
                         <div class="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
-                            <img src="images/calendar.png" class="max-w-full max-h-full object-contain">
+                            <img src="images/calendar.png" class="max-w-full max-h-full object-contain" alt="">
                         </div>
-                    </button>
+                    </a>
 
                     <div class="flex-1">
                         <h3 class="text-lg md:text-2xl font-bold mb-1 md:mb-3 text-gray-900">1. Book Without Pressure</h3>
@@ -536,11 +153,10 @@ body {
                     </div>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="bg-gray-50 rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0 border border-gray-100">
                     <div class="w-20 h-20 md:w-24 md:h-24 md:mx-auto bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6">
                         <div class="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
-                            <img src="images/wheel_transparent2.png" class="max-w-full max-h-full object-contain scale-110">
+                            <img src="images/wheel_transparent2.png" class="max-w-full max-h-full object-contain scale-110" alt="">
                         </div>
                     </div>
 
@@ -552,24 +168,69 @@ body {
                     </div>
                 </div>
 
-                <!-- Step 3 - Yellow Highlight -->
                 <div class="bg-gray-50 rounded-3xl p-4 md:p-8 step-card flex flex-row md:flex-col items-center md:text-center gap-4 md:gap-0 border-2 border-red-700 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-amber-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-xl">FINAL STEP</div>
                     <div class="w-20 h-20 md:w-24 md:h-24 md:mx-auto bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0 md:mb-6">
                         <div class="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
-                            <img src="images/steering_wheel_transparent.png" class="max-w-full max-h-full object-contain scale-110">
+                            <img src="images/steering_wheel_transparent.png" class="max-w-full max-h-full object-contain scale-110" alt="">
                         </div>
                     </div>
 
                     <div class="flex-1">
                         <h3 class="text-lg md:text-2xl font-bold mb-1 md:mb-3 text-gray-900">3. Pass With Confidence</h3>
                         <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-                            Master the exact ICBC test routes in Kelowna. Walk into your exam calm, prepared, and ready to succeed.
+                            Master the exact <strong>ICBC test routes in Kelowna</strong>. Walk into your exam calm, prepared, and ready to succeed.
                         </p>
                         <span class="inline-block mt-2 md:mt-6 text-xs bg-amber-500 text-gray-900 px-4 py-1 rounded-3xl font-bold">
                             Car provided for test day
                         </span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="py-20 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <span class="text-red-700 font-bold tracking-widest text-sm uppercase">What We Offer</span>
+                <h2 class="heading-font text-3xl md:text-4xl mt-3 text-gray-900">Driving Lessons Built Around You</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Whether you're starting from scratch or brushing up before your test, we have a program for you.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 hover:border-amber-400 transition">
+                    <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-car text-2xl text-gray-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Driving Lessons</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Complete beginner to confident driver. Patient, step-by-step instruction tailored to nervous learners in Kelowna.</p>
+                    <a href="driving-lessons-kelowna.html" class="inline-flex items-center gap-x-2 text-red-700 font-bold hover:text-red-800 transition">
+                        Learn More <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 hover:border-amber-400 transition">
+                    <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-clipboard-check text-2xl text-gray-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Road Test Preparation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Master the exact ICBC routes, practice mock tests, and use our dual-control car on exam day in Kelowna.</p>
+                    <a href="road-test-preparation-kelowna.html" class="inline-flex items-center gap-x-2 text-red-700 font-bold hover:text-red-800 transition">
+                        Learn More <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 hover:border-amber-400 transition">
+                    <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-rotate-right text-2xl text-gray-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Brush-Up Lessons</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Haven't driven in years? Failed before? A few targeted sessions to rebuild your skills and confidence fast.</p>
+                    <a href="brush-up-driving-lessons-kelowna.html" class="inline-flex items-center gap-x-2 text-red-700 font-bold hover:text-red-800 transition">
+                        Learn More <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -585,7 +246,6 @@ body {
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                <!-- Package 1 -->
                 <div class="bg-white border border-gray-200 rounded-3xl p-8 package-card hover:border-amber-400">
                     <div class="text-red-700 font-bold mb-2 text-sm uppercase tracking-wide">Try Us Out</div>
                     <div class="text-5xl font-bold mb-1 text-gray-900">$90</div>
@@ -595,11 +255,10 @@ body {
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> 90-minute session</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Dual-control car included</li>
                     </ul>
-                    <button id="btn-single-lesson" data-package-value="Single Lesson ($90)" onclick="scrollToSection('contact')" 
-                            class="w-full py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-3xl font-bold transition shadow-md">Get Started</button>
+                    <a href="contact.html" data-package-value="Single Lesson ($90)"
+                       class="block w-full py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-3xl font-bold transition shadow-md text-center">Get Started</a>
                 </div>
                 
-                <!-- Package 2 - Yellow Accent as Most Popular -->
                 <div class="bg-white border-2 border-amber-500 rounded-3xl p-8 package-card relative shadow-lg transform md:-translate-y-2">
                     <div class="absolute -top-3 right-6 bg-amber-500 text-gray-900 text-xs px-4 py-1 rounded-3xl font-bold shadow-sm">MOST POPULAR</div>
                     <div class="text-red-700 font-bold mb-2 text-sm uppercase tracking-wide">Build Confidence</div>
@@ -610,11 +269,10 @@ body {
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Progressive skill building</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Personalized feedback</li>
                     </ul>
-                    <button id="btn-3-lesson" data-package-value="3 Lesson Package ($260)" onclick="scrollToSection('contact')" 
-                            class="w-full py-4 bg-red-700 hover:bg-red-800 text-white rounded-3xl font-bold transition shadow-lg">Choose This Package</button>
+                    <a href="contact.html" data-package-value="3 Lesson Package ($260)"
+                       class="block w-full py-4 bg-red-700 hover:bg-red-800 text-white rounded-3xl font-bold transition shadow-lg text-center">Choose This Package</a>
                 </div>
                 
-                <!-- Package 3 -->
                 <div class="bg-white border border-gray-200 rounded-3xl p-8 package-card hover:border-amber-400">
                     <div class="text-red-700 font-bold mb-2 text-sm uppercase tracking-wide">Test Ready</div>
                     <div class="text-5xl font-bold mb-1 text-gray-900">$620</div>
@@ -624,23 +282,22 @@ body {
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> ICBC route practice</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Mock test included</li>
                     </ul>
-                    <button id="btn-7-lesson" data-package-value="7 Lesson Package ($620)" onclick="scrollToSection('contact')" 
-                            class="w-full py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-3xl font-bold transition shadow-md">Prepare to Pass</button>
+                    <a href="contact.html" data-package-value="7 Lesson Package ($620)"
+                       class="block w-full py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-3xl font-bold transition shadow-md text-center">Prepare to Pass</a>
                 </div>
                 
-                <!-- Package 4 - Red with Yellow Highlights -->
                 <div class="bg-red-700 border-2 border-red-700 rounded-3xl p-8 package-card relative text-white shadow-xl">
                     <div class="text-amber-400 font-bold mb-2 text-sm uppercase tracking-wide">Complete Freedom</div>
                     <div class="text-5xl font-bold mb-1">$1,040</div>
-                    <div class="text-sm text-red-100 mb-6 font-medium">11 Lessons + Test Day Car</div>
-                    <p class="text-red-100 mb-8 leading-relaxed">Everything you need from first timer to licensed driver. Includes car for your actual ICBC test.</p>
-                    <ul class="space-y-2 mb-8 text-sm text-red-100">
+                    <div class="text-sm text-white/90 mb-6 font-medium">11 Lessons + Test Day Car</div>
+                    <p class="text-white/90 mb-8 leading-relaxed">Everything you need from first timer to licensed driver. Includes car for your actual ICBC test.</p>
+                    <ul class="space-y-2 mb-8 text-sm text-white/90">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> All lessons + road test car</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> 94% first-time pass rate</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> High percentage first-time pass rate</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Unlimited peace of mind</li>
                     </ul>
-                    <button id="btn-full-package" data-package-value="Full Package and Test Car ($1,040)" onclick="scrollToSection('contact')" 
-                            class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-gray-900 rounded-3xl font-bold transition shadow-lg">Get Full Package</button>
+                    <a href="contact.html" data-package-value="Full Package and Test Car ($1,040)"
+                       class="block w-full py-4 bg-amber-500 hover:bg-amber-400 text-gray-900 rounded-3xl font-bold transition shadow-lg text-center">Get Full Package</a>
                 </div>
             </div>
             
@@ -658,10 +315,9 @@ body {
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                <!-- Instructor 1: Dean -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person1.jpg" loading="lazy" alt="Dean - Lead Instructor"
+                        <img src="images/person1.jpg" loading="lazy" alt="Dean - Lead Driving Instructor in Kelowna"
                              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-yellow-700/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white text-sm leading-relaxed">"I specialize in turning 'I can't do this' into 'I passed!' with patience and zero judgment."</p>
@@ -681,10 +337,9 @@ body {
                     </div>
                 </div>
 
-                <!-- Instructor 2: Sarah -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person8.jpg" loading="lazy" alt="Sarah - Driving Instructor"
+                        <img src="images/person8.jpg" loading="lazy" alt="Sarah - Nervous Driver Specialist"
                              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-yellow-700/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white text-sm leading-relaxed">"Nervous beginners are my favourite students. Watching you transform is why I teach."</p>
@@ -704,7 +359,6 @@ body {
                     </div>
                 </div>
 
-                <!-- Instructor 3: Michael -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
                         <img src="images/person2.jpg" loading="lazy" alt="Michael - ICBC Test Specialist"
@@ -727,10 +381,9 @@ body {
                     </div>
                 </div>
 
-                <!-- Instructor 4: Jessica -->
                 <div class="instructor-card group">
                     <div class="relative mb-6 overflow-hidden rounded-3xl shadow-lg">
-                        <img src="images/person9.jpg" loading="lazy" alt="Jessica - Precision Instructor"
+                        <img src="images/person9.jpg" loading="lazy" alt="Jessica - Precision Driving Instructor"
                              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-yellow-700/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                             <p class="text-white text-sm leading-relaxed">"Perfect for detail-oriented students who want to master every maneuver flawlessly."</p>
@@ -771,7 +424,7 @@ body {
                     <div class="flex text-amber-500 mb-4 text-lg">★★★★★</div>
                     <p class="italic text-gray-700 leading-relaxed text-lg">"I was shaking just thinking about driving. Dean had me calm and confident within two lessons. Passed my N test on the FIRST TRY. Worth every penny."</p>
                     <div class="mt-6 flex items-center gap-x-3">
-                        <img src="images/sarah.jpg" class="w-10 h-10 rounded-2xl object-cover">
+                        <img src="images/sarah.jpg" class="w-10 h-10 rounded-2xl object-cover" alt="Sarah M.">
                         <div>
                             <div class="font-bold text-gray-900">Sarah M.</div>
                             <div class="text-xs text-gray-500">Kelowna • Formerly terrified driver</div>
@@ -782,7 +435,7 @@ body {
                     <div class="flex text-amber-500 mb-4 text-lg">★★★★★</div>
                     <p class="italic text-gray-700 leading-relaxed text-lg">"After a bad experience with another school, I was skeptical. Calle Cinco changed everything. Patient, never rushed me, and actually made driving enjoyable."</p>
                     <div class="mt-6 flex items-center gap-x-3">
-                        <img src="images/michael.jpg" class="w-10 h-10 rounded-2xl object-cover">
+                        <img src="images/michael.jpg" class="w-10 h-10 rounded-2xl object-cover" alt="Michael T.">
                         <div>
                             <div class="font-bold text-gray-900">Michael T.</div>
                             <div class="text-xs text-gray-500">West Kelowna • Adult learner</div>
@@ -793,7 +446,7 @@ body {
                     <div class="flex text-amber-500 mb-4 text-lg">★★★★★</div>
                     <p class="italic text-gray-700 leading-relaxed text-lg">"Best prices AND the most amazing instructor. They don't just teach you to pass the test—they teach you to drive safely for life. Thank you Calle Cinco!"</p>
                     <div class="mt-6 flex items-center gap-x-3">
-                        <img src="images/jessica.jpg" class="w-10 h-10 rounded-2xl object-cover">
+                        <img src="images/jessica.jpg" class="w-10 h-10 rounded-2xl object-cover" alt="Jessica P.">
                         <div>
                             <div class="font-bold text-gray-900">Jessica P.</div>
                             <div class="text-xs text-gray-500">Kelowna • Passed Class 5</div>
@@ -814,8 +467,8 @@ body {
             <div class="md:col-span-7">
                 <h2 class="heading-font text-3xl md:text-4xl mb-6 text-gray-900">We Turn "I Can't" Into "I Passed"</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-8">
-    At <span class="font-bold text-amber-500 text-xl">Calle Cinco</span>, we believe everyone deserves to drive without fear. Whether you're a nervous teenager, an adult who never learned, or someone recovering from a bad driving experience—we see you, and we can help.
-</p>
+                    At <span class="font-bold text-amber-500 text-xl">Calle Cinco</span>, we believe everyone deserves to drive without fear. Whether you're a nervous teenager, an adult who never learned, or someone recovering from a bad driving experience—we see you, and we can help.
+                </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
                     <div class="flex gap-x-4">
                         <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0">
@@ -843,109 +496,29 @@ body {
         </div>
     </section>
 
-    <!-- BOOKING SECTION -->
-    <section id="contact" class="py-20 md:py-24 bg-red-700 text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            
-            <div class="text-center mb-12">
-                <h2 class="heading-font text-4xl md:text-5xl text-white">
-                    Ready to Finally Feel Confident?
-                </h2>
-
-                <p class="mt-4 text-xl md:text-2xl text-red-100 leading-relaxed">
-                    Join 200+ students who transformed from anxious beginners to confident drivers. Your first lesson is just a text away.
-                </p>
-
-                <!-- PRIMARY CTA: TEXT -->
-                <a href="sms:12503000552?body=Hi%20I'm%20interested%20in%20driving%20lessons" 
-                   class="inline-flex items-center gap-x-3 mt-8 bg-amber-500 text-gray-900 px-10 py-5 rounded-3xl text-xl font-bold shadow-2xl hover:bg-amber-400 transition transform hover:scale-105">
-                    <i class="fa-solid fa-comment"></i>
-                    TEXT US NOW
+    <!-- CTA SECTION -->
+    <section class="py-20 md:py-24 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="heading-font text-4xl md:text-5xl text-gray-900">
+                Ready to Finally Feel Confident?
+            </h2>
+            <p class="mt-4 text-xl md:text-2xl text-gray-600 leading-relaxed">
+                Join 200+ students who transformed from anxious beginners to confident drivers. Your first lesson is just a text away.
+            </p>
+            <a href="contact.html" 
+               class="inline-flex items-center gap-x-3 mt-8 bg-red-700 text-white px-10 py-5 rounded-3xl text-xl font-bold shadow-2xl hover:bg-red-800 transition transform hover:scale-105">
+                <i class="fa-solid fa-comment"></i>
+                TEXT US NOW
+            </a>
+            <div class="mt-6">
+                <a href="tel:2503000552" 
+                   class="text-lg md:text-xl text-gray-700 hover:text-red-700 transition font-semibold">
+                    Prefer calling? (250) 300-0552
                 </a>
-
-                <!-- Secondary (less prominent) call option -->
-                <div class="mt-6">
-                    <a href="tel:2503000552" 
-                       class="text-lg md:text-xl text-amber-200 hover:text-white transition font-semibold">
-                        Prefer calling? (250) 300-0552
-                    </a>
-                </div>
-
-                <p class="text-sm mt-2 text-red-200">
-                    We reply within 10 minutes • Same-week booking available
-                </p>
             </div>
-                
-            <form id="booking-form" class="bg-white text-gray-900 rounded-3xl p-6 md:p-12 shadow-2xl">
-                <div class="mb-6 bg-amber-50 border border-amber-200 text-amber-900 px-6 py-4 rounded-2xl text-sm font-medium flex items-start gap-3">
-                    <i class="fa-solid fa-bolt text-amber-600 mt-1"></i>
-                    <div>
-                        <strong>Limited spots this week:</strong> We only take 8 new students per week to maintain quality. Book now to secure your preferred time.
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Full Name</label>
-                        <input type="text" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-100 transition" placeholder="Your name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Phone Number</label>
-                        <input type="tel" required class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-100 transition" placeholder="(250) 300-0552">
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Your Goal</label>
-                        <select class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-100 transition bg-white">
-                            <option>Just starting out (complete beginner)</option>
-                            <option>Nervous but have some experience</option>
-                            <option>Ready for road test soon</option>
-                            <option>Failed before, need help</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Preferred Package</label>
-                        <select id="preferred-package" class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-100 transition bg-white">
-                            <option>Not sure yet—help me choose</option>
-                            <option>Single Lesson ($90)</option>
-                            <option>3 Lesson Package ($260)</option>
-                            <option>7 Lesson Package ($620)</option>
-                            <option>Full Package and Test Car ($1,040)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="mt-6">
-                    <label class="block text-sm font-bold mb-3">Best Time to Reach You</label>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-amber-500 hover:bg-amber-50 transition text-sm font-medium">Morning</button>
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-amber-500 hover:bg-amber-50 transition text-sm font-medium">Afternoon</button>
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-amber-500 hover:bg-amber-50 transition text-sm font-medium">Evening</button>
-                        <button type="button" class="time-slot border border-gray-200 rounded-2xl py-3 hover:border-amber-500 hover:bg-amber-50 transition text-sm font-medium">Weekend</button>
-                    </div>
-                    <input type="hidden" id="selected-time">
-                </div>
-
-                <div class="mt-6">
-                    <label class="block text-sm font-bold mb-2">Tell us about your concerns</label>
-                    <textarea rows="4" placeholder="Are you nervous? Previous bad experience? Specific test date coming up?" 
-                              class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-red-700 focus:ring-2 focus:ring-red-100 transition resize-none"></textarea>
-                </div>
-
-                <button type="submit" 
-                        class="mt-8 w-full bg-red-700 text-white py-5 md:py-6 rounded-3xl text-lg md:text-xl font-bold hover:bg-red-800 transition shadow-lg transform active:scale-95">
-                    REQUEST MY LESSON SPOT
-                </button>
-                <p class="text-center text-xs text-gray-500 mt-6">We never share your information • Usually reply within 10 minutes</p>
-
-                <div id="success-message" class="hidden mt-8 bg-green-50 border border-green-200 text-green-800 p-6 rounded-2xl text-center">
-                    <div class="text-2xl mb-2">✅ You're on the list!</div>
-                    <div class="font-medium">We'll text you within 10 minutes to confirm your spot.<br>
-                    <strong>Save our number: (250) 300-0552</strong></div>
-                </div>
-            </form>
+            <p class="text-sm mt-2 text-gray-500">
+                We reply within 10 minutes • Same-week booking available
+            </p>
         </div>
     </section>
 
@@ -975,124 +548,8 @@ body {
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-400 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-8 lg:gap-12">
-            <div>
-                <img src="images/calle-cinco-logo.png" alt="Calle Cinco Driving School Logo" class="h-10 w-auto mb-6">
-                <p class="text-sm leading-relaxed text-gray-300">Kelowna's patient choice for nervous beginners. We don't just teach driving—we build confidence.</p>
-            </div>
-            <div>
-                <div class="font-bold text-white mb-4">Quick Links</div>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#packages" class="hover:text-amber-400 transition">Lesson Packages</a></li>
-                    <li><a href="#how" class="hover:text-amber-400 transition">How It Works</a></li>
-                    <li><a href="#reviews" class="hover:text-amber-400 transition">Student Success Stories</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="font-bold text-white mb-4">Contact</div>
-                <a href="tel:2503000552" class="block hover:text-amber-400 mb-2 transition font-semibold">(250) 300-0552</a>
-                <a href="mailto:drive@callecinco.ca" class="block hover:text-white mb-2 transition">drive@callecinco.ca</a>
-                <p class="text-xs mt-4 leading-relaxed text-gray-500">1540 Feedham Ave<br>Kelowna, BC V1Y 7N9</p>
-            </div>
-            <div>
-                <div class="font-bold text-white mb-4">Follow Our Journey</div>
-                <a href="https://www.facebook.com/p/Calle-Cinco-Driving-School-61555361729231/" target="_blank" class="inline-flex items-center gap-x-2 hover:text-amber-400 transition">
-                    <i class="fa-brands fa-facebook"></i> Facebook
-                </a>
-                <p class="text-xs mt-12 text-gray-600">© 2026 Calle Cinco Driving School. All Rights Reserved.<br>Designed for confidence.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <!-- STICKY MOBILE BOOK BUTTON -->
-    <button onclick="scrollToSection('contact')" 
-            class="fixed bottom-6 right-6 md:hidden bg-amber-500 text-gray-900 w-14 h-14 rounded-3xl shadow-2xl flex items-center justify-center text-3xl z-50 hover:bg-amber-400 transition transform hover:scale-110">
-        <i class="fa-solid fa-calendar"></i>
-    </button>
-
-    <script>
-        // Mobile menu elements
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navbar = document.getElementById('navbar');
-        const cta = document.getElementById('cta-button');
-        
-        // Mobile menu toggle
-        menuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            this.classList.toggle('menu-open');
-        });
-        
-        // Close mobile menu when clicking a link
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
-            menuBtn.classList.remove('menu-open');
-        }
-        
-        // Smooth scroll helper
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-            closeMobileMenu();
-        }
-        
-        // Navbar scroll behavior
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.classList.remove('nav-transparent');
-                navbar.classList.add('nav-scrolled');
-                
-                // CTA stays car red
-                cta.classList.add('cta-scrolled');
-                cta.classList.remove('cta-btn');
-            } else {
-                navbar.classList.add('nav-transparent');
-                navbar.classList.remove('nav-scrolled');
-                
-                // CTA stays car red
-                cta.classList.remove('cta-scrolled');
-                cta.classList.add('cta-btn');
-            }
-        });
-        
-        // Time slot selection
-        document.querySelectorAll('.time-slot').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.time-slot').forEach(b => {
-                    b.classList.remove('border-amber-500', 'bg-amber-50', 'text-amber-700');
-                    b.classList.add('border-gray-200');
-                });
-                btn.classList.remove('border-gray-200');
-                btn.classList.add('border-amber-500', 'bg-amber-50', 'text-amber-700');
-                document.getElementById('selected-time').value = btn.innerText;
-            });
-        });
-
-        // Package button autofill
-        const packageSelect = document.getElementById('preferred-package');
-        document.querySelectorAll('[data-package-value]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (packageSelect) {
-                    packageSelect.value = btn.dataset.packageValue;
-                }
-            });
-        });
-        
-        // Form submission
-        document.getElementById('booking-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            const success = document.getElementById('success-message');
-            btn.innerHTML = 'SENDING... <i class="fa-solid fa-spinner fa-spin"></i>';
-            btn.disabled = true;
-            setTimeout(() => {
-                success.classList.remove('hidden');
-                btn.innerHTML = 'REQUEST SENT ✓';
-                btn.classList.add('bg-green-600');
-                this.reset();
-            }, 1500);
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
