@@ -1,5 +1,5 @@
 /* ============================================
-   CALLE CINCO DRIVING SCHOOL - SHARED JS
+   CALLE CINCO DRIVING SCHOOL — SHARED JS
    ============================================ */
 
 // Load partials (header + footer) into the page
@@ -60,7 +60,7 @@ function initHeader() {
                 }
             }
         }
-        window.addEventListener('scroll', updateNav);
+        window.addEventListener('scroll', updateNav, { passive: true });
         updateNav(); // run once on load
     }
 
@@ -93,6 +93,26 @@ function scrollToSection(id) {
         el.scrollIntoView({ behavior: 'smooth' });
     }
     closeMobileMenu();
+}
+
+// Scroll reveal using IntersectionObserver
+function initScrollReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    reveals.forEach(el => observer.observe(el));
 }
 
 // Time slot selection (contact page)
@@ -173,5 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
         initPackageButtons();
         initForm();
         initFaq();
+        initScrollReveal();
     });
 });
