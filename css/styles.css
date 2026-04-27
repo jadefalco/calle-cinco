@@ -126,13 +126,17 @@ body {
   font-weight: 700;
 }
 
-/* LOGO */
+/* ===== LOGO ===== */
 .logo-img {
-  height: 60px;
+  height: 72px;
   width: auto;
+  transition: transform 0.2s ease;
+}
+.logo-img:hover {
+  transform: scale(1.05);
 }
 @media (max-width: 768px) {
-  .logo-img { height: 42px; }
+  .logo-img { height: 52px; }
 }
 
 /* HEADER CTA BUTTON (BOOK YOUR LESSON) */
@@ -301,17 +305,23 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+/* ===== BADGE / PILL ===== */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--cc-red);
-  color: var(--cc-yellow);
+  background: var(--cc-yellow);
+  color: var(--cc-black);
   font-size: 0.875rem;
   font-weight: 700;
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
   box-shadow: var(--shadow-md);
+}
+
+.badge i,
+.badge svg {
+  color: var(--cc-black) !important;
 }
 
 /* ============================================

@@ -12,7 +12,48 @@
 </head>
 <body class="bg-gray-50">
 
-    <div id="header-placeholder"></div>
+<header id="navbar" class="nav-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <img src="images/calle-cinco-logo.png" alt="Calle Cinco" class="logo-img">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 desktop-links font-medium">
+      <a href="index.html">Home</a>
+      <a href="driving-lessons-kelowna.html">Lessons</a>
+      <a href="road-test-preparation-kelowna.html">Road Test</a>
+      <a href="brush-up-driving-lessons-kelowna.html">Brush-Up</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="tel:2503000552" class="hidden lg:flex items-center gap-2 phone-link font-bold">
+        <i class="fa-solid fa-phone"></i>
+        <span>(250) 300-0552</span>
+      </a>
+      <a href="contact.html" class="cta-btn">Book Your Lesson</a>
+      <div id="mobile-menu-button" onclick="toggleMobileMenu()">
+        <div class="icon-wrapper">
+          <div class="hamburger-icon"><i class="fa-solid fa-bars text-xl"></i></div>
+          <svg class="steering-wheel-icon" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden">
+    <div class="px-4 py-4 space-y-1">
+      <a href="index.html">Home</a>
+      <a href="driving-lessons-kelowna.html">Driving Lessons</a>
+      <a href="road-test-preparation-kelowna.html">Road Test Prep</a>
+      <a href="brush-up-driving-lessons-kelowna.html">Brush-Up</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:2503000552"><i class="fa-solid fa-phone mr-2"></i>(250) 300-0552</a>
+    </div>
+  </div>
+</header>
 
     <!-- BLOG HERO -->
     <header class="sub-page-hero" style="background: url('images/open-road.jpg') center/cover no-repeat;">
@@ -108,8 +149,87 @@
         </div>
     </section>
 
-    <div id="footer-placeholder"></div>
+<footer class="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm leading-relaxed">
+    <div class="space-y-4">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="https://lh3.googleusercontent.com/aida/ADBb0ujerQF_EWFLWFIi-exmwmqq7NwK3kzTSoCT44saLCypuI4TuFDxYiFAEjTgHXBsLusg-O2RKqdvx5ECyQMjVJwwtfB7WnKVjPvvwrFLSac-TETbjm3Tbb2jUVoUqD__Vc6TkRb-U8Ss5yy2ulUfAflGu-Hat78jLR9eCSpWl0a-tmHlSeKhc5mUILVZDmC4k7dfaWN0baweBTw5CucQ8ZHpE3zo6J0DlWJvclQXInin6wfidcp_9pw4xIlHvKc5ZJSvb8-h6umjwg" alt="Logo" class="h-10 w-10 object-contain">
+        <div class="text-xl font-bold">Calle Cinco</div>
+      </div>
+      <p class="text-gray-400">Professional driver training in Kelowna. ICBC Licensed & Bonded. Building confident drivers for a safer Okanagan.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Services</h4>
+      <ul class="space-y-3 text-gray-400">
+        <li><a href="driving-lessons-kelowna.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Driving Lessons</a></li>
+        <li><a href="road-test-preparation-kelowna.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Road Test Prep</a></li>
+        <li><a href="brush-up-driving-lessons-kelowna.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Brush-Up Lessons</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
+      <ul class="space-y-3 text-gray-400">
+        <li><a href="blog.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Blog & Tips</a></li>
+        <li><a href="contact.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Contact</h4>
+      <ul class="space-y-3 text-gray-400">
+        <li><i class="fa-solid fa-phone mr-2 text-yellow-400"></i><a href="tel:2503000552" class="hover:text-white transition">(250) 300-0552</a></li>
+        <li><i class="fa-solid fa-envelope mr-2 text-yellow-400"></i><a href="mailto:drive@callecinco.ca" class="hover:text-white transition">drive@callecinco.ca</a></li>
+        <li><i class="fa-solid fa-location-dot mr-2 text-yellow-400"></i>Kelowna, BC</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-16 pt-8 border-t border-gray-800 text-center">
+    <p class="text-gray-500 text-xs">© 2024 Calle Cinco Driving School. All rights reserved.</p>
+  </div>
+</footer>
 
-    <script src="js/script.js"></script>
+<script>
+(function(){
+  var p = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.desktop-links a, #mobile-menu a').forEach(function(a){
+    if(a.getAttribute('href') === p) a.classList.add('nav-active');
+  });
+  var navbar = document.getElementById('navbar');
+  function updateNav(){
+    if(!navbar) return;
+    if(window.scrollY > 50){
+      navbar.classList.remove('nav-transparent');
+      navbar.classList.add('nav-scrolled');
+    } else {
+      navbar.classList.add('nav-transparent');
+      navbar.classList.remove('nav-scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNav, {passive:true});
+  updateNav();
+  window.toggleMobileMenu = function(){
+    var b = document.getElementById('mobile-menu-button');
+    var m = document.getElementById('mobile-menu');
+    if(b && m){
+      b.classList.toggle('menu-open');
+      m.classList.toggle('hidden');
+    }
+  };
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('revealed');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+    reveals.forEach(function(el){ obs.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('revealed'); });
+  }
+})();
+</script>
+
 </body>
 </html>
