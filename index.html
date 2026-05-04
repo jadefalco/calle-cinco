@@ -50,13 +50,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 home-hero-mock">
 
 <header id="navbar" class="nav-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3 shrink-0">
-      <img src="images/calle-cinco-logo.png
-      " alt="Calle Cinco" class="logo-img">
+      <img src="images/calle-cinco-logo.png" alt="Calle Cinco" class="logo-img">
     </a>
     <nav class="hidden md:flex items-center gap-8 desktop-links font-medium">
       <a href="index.html">Home</a>
@@ -75,7 +74,7 @@
       <div id="mobile-menu-button" onclick="toggleMobileMenu()">
         <div class="icon-wrapper">
           <div class="hamburger-icon"><i class="fa-solid fa-bars text-xl"></i></div>
-          <svg class="steering-wheel-icon" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="steering-wheel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
           </svg>
@@ -96,90 +95,90 @@
   </div>
 </header>
 
-    <!-- HERO -->
-    <header id="hero" class="hero" style="background: url('images/road8.jpeg') center/cover no-repeat;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            
-            <!-- LEFT CONTENT -->
-            <div class="space-y-6 md:space-y-8 text-center md:text-left">
-                
-                <div class="badge reveal">
-                    <i class="fa-solid fa-check-circle text-yellow-400"></i>
-                    HIGH PASS RATE ON FIRST TAKE &bull; OPEN 7 DAYS
-                </div>
-
-<h1 class="heading-font leading-tight hero-text-shadow">
-  <span class="block text-5xl md:text-6xl lg:text-7xl font-bold text-black">
-    Go <span class="text-red-600">anywhere.</span>
-  </span>
-  <span class="block text-5xl md:text-6xl lg:text-7xl font-bold text-black">
-    Start <span class="text-yellow-500">here.</span>
-  </span>
-</h1>
-
-                    <span class="block text-xl md:text-2xl mt-2 text-black font-medium">Master the road with confidence</span>
-                </h1>               
-                
-                <p class="text-lg md:text-xl lg:text-2xl max-w-lg mx-auto md:mx-0 leading-relaxed reveal reveal-delay-2 text-black hero-text-shadow">
-  <span class="font-semibold">Calle Cinco Driving School</span> helps nervous beginners in Kelowna become confident drivers. Enjoy driving and pass your <span class="text-red-600 font-semibold">ICBC road test</span> the first time.
-</p>
-            
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start reveal reveal-delay-2">
-                    <a href="contact.html" class="btn btn-primary">
+    <!-- HERO — split layout inspired by brand mockup -->
+    <header id="hero" class="hero-mock relative">
+        <div class="hero-mock__grid max-w-[1600px] mx-auto relative">
+            <div class="hero-mock__copy text-center md:text-left reveal">
+                <p class="hero-mock__eyebrow">Confidence behind the wheel</p>
+                <h1 class="hero-mock__title">
+                    <span class="block">Learn today,</span>
+                    <span class="block t-yellow">Drive tomorrow.</span>
+                </h1>
+                <p class="hero-mock__lead">Master the road with confidence.</p>
+                <p class="hero-mock__body">
+                    <strong>Calle Cinco Driving School</strong> helps nervous beginners in Kelowna become confident drivers and pass their <strong>ICBC road test</strong> the first time.
+                </p>
+                <div class="hero-mock__actions justify-center md:justify-start reveal reveal-delay-1">
+                    <a href="contact.html" class="hero-mock__btn-red">
                         <i class="fa-solid fa-calendar-check"></i>
-                        BOOK YOUR FIRST LESSON
+                        Book your first lesson
                     </a>
-                    
-                    <a href="driving-lessons-kelowna.html" class="btn btn-secondary">
-                        VIEW SERVICES
-                        <i class="fa-solid fa-arrow-right"></i>
+                    <a href="driving-lessons-kelowna.html" class="hero-mock__btn-outline">
+                        <i class="fa-solid fa-circle-info"></i>
+                        View services
                     </a>
                 </div>
-                
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 lg:gap-x-8 text-sm pt-2 reveal reveal-delay-3">
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-car-side text-2xl md:text-3xl text-yellow-500"></i>
-                        <div class="text-left">
-                            <div class="font-bold text-black hero-text-shadow">ICBC Test Experts</div>
-                            <div class="text-black text-xs hero-text-shadow">Car included for your test</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-heart text-2xl md:text-3xl text-yellow-500"></i>
-                        <div class="text-left">
-                            <div class="font-bold text-black hero-text-shadow">Nervous Driver Specialists</div>
-                            <div class="text-black text-xs hero-text-shadow">Zero judgment, endless patience</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-x-2">
-                        <i class="fa-solid fa-shield-check text-2xl md:text-3xl text-yellow-500"></i>
-                        <div class="text-left">
-                            <div class="font-bold text-black hero-text-shadow">Dual-Control Safety</div>
-                            <div class="text-black text-xs hero-text-shadow">You're always protected</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- RIGHT IMAGE -->
-            <div class="hidden md:block relative reveal reveal-delay-2">
-                <img src="images/driving-school-student-and-instructor.jpg" 
-                     alt="Driving lesson with instructor and student in Kelowna" 
-                     class="rounded-3xl shadow-2xl w-full hero-image-float">
-                     
-                <div class="absolute -bottom-6 -right-6 bg-red-700 text-yellow-400 rounded-3xl px-6 py-4 shadow-2xl flex items-center gap-x-3 border-4 border-yellow-400">
-                    <div class="bg-yellow-400 rounded-full p-2">
-                        <i class="fa-solid fa-check text-2xl text-red-800"></i>
+                <div class="hero-mock__social justify-center md:justify-start reveal reveal-delay-2">
+                    <div class="hero-mock__avatars" aria-hidden="true">
+                        <img src="images/person1.jpg" alt="">
+                        <img src="images/person8.jpg" alt="">
+                        <img src="images/person2.jpg" alt="">
                     </div>
                     <div>
-                        <div class="font-bold text-lg">Passed on first try!</div>
-                        <div class="text-sm">Join 200+ successful students</div>
+                        <span class="hero-mock__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="ml-2">4.9/5 from 87+ reviews &middot; Join 200+ students</span>
                     </div>
                 </div>
             </div>
-            
+            <div class="hero-mock__visual order-first md:order-none reveal reveal-delay-1">
+                <div class="hero-mock__visual-bg" style="background-image: url('images/driving-school-student-and-instructor.jpg');"></div>
+                <div class="hero-mock__stripe" aria-hidden="true"></div>
+                <div class="absolute bottom-4 right-4 left-4 md:left-auto md:right-6 md:bottom-8 z-[5] max-w-sm ml-auto md:ml-0 bg-red-700 text-[#FEBD59] rounded-xl px-4 py-3 shadow-2xl flex items-center gap-3 border-2 border-[#FEBD59]">
+                    <div class="bg-[#FEBD59] rounded-full p-2 shrink-0">
+                        <i class="fa-solid fa-check text-lg text-red-800"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="font-bold text-sm md:text-base text-white">Passed on first try!</div>
+                        <div class="text-xs text-white/90">Join 200+ successful students</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
+
+    <!-- Value bar — mockup feature strip -->
+    <section class="drive-features-bar" aria-label="Why Calle Cinco">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 drive-features-bar__grid">
+            <div class="drive-feature reveal">
+                <div class="drive-feature__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <div>
+                    <h2 class="drive-feature__title">ICBC test experts</h2>
+                    <p class="drive-feature__text">Certified, patient instructors who know Kelowna test routes inside and out.</p>
+                </div>
+            </div>
+            <div class="drive-feature reveal reveal-delay-1">
+                <div class="drive-feature__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                    <h2 class="drive-feature__title">Safety first</h2>
+                    <p class="drive-feature__text">Dual-control cars and calm coaching so you always feel protected.</p>
+                </div>
+            </div>
+            <div class="drive-feature reveal reveal-delay-2">
+                <div class="drive-feature__icon"><i class="fa-solid fa-car"></i></div>
+                <div>
+                    <h2 class="drive-feature__title">Modern vehicles</h2>
+                    <p class="drive-feature__text">Clean, well-maintained cars built for learning and test day.</p>
+                </div>
+            </div>
+            <div class="drive-feature reveal reveal-delay-3">
+                <div class="drive-feature__icon"><i class="fa-solid fa-award"></i></div>
+                <div>
+                    <h2 class="drive-feature__title">High pass rate</h2>
+                    <p class="drive-feature__text">The majority of our students pass on their first take—without the stress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 1. HOW IT WORKS -->
     <section id="how" class="section bg-section-gray">
@@ -536,25 +535,23 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section bg-section-alt">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
-            <h2 class="cta-title">Ready to Finally Feel Confident?</h2>
-            <p class="cta-desc">
-                Join 200+ students who transformed from anxious beginners to confident drivers. Your first lesson is just a text away.
-            </p>
-            <a href="contact.html" class="btn btn-primary text-lg md:text-xl px-10 py-5">
-                <i class="fa-solid fa-comment"></i>
-                TEXT US NOW
-            </a>
-            <div class="mt-6">
-                <a href="tel:2503000552" class="text-lg md:text-xl text-black hover:text-red-700 transition font-semibold">
-                    Prefer calling? (250) 300-0552
-                </a>
+    <!-- CTA — yellow banner (mockup style) -->
+    <section class="drive-cta-strip reveal">
+        <div class="drive-cta-strip__inner">
+            <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+                <div class="drive-cta-strip__icon" aria-hidden="true"><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="drive-cta-strip__copy">
+                    <h2>Ready to get started?</h2>
+                    <p>Book your first lesson today and take the first step toward freedom on the road. Join 200+ students who transformed from anxious beginners to confident drivers—we reply within minutes.</p>
+                </div>
             </div>
-            <p class="text-sm mt-2 text-black">
-                We reply within 10 minutes &bull; Same-week booking available
-            </p>
+            <div class="flex flex-col items-center gap-3 shrink-0">
+                <a href="contact.html" class="drive-cta-strip__btn">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book now
+                </a>
+                <a href="tel:2503000552" class="text-sm font-bold text-neutral-900 hover:underline">Or call (250) 300-0552</a>
+            </div>
         </div>
     </section>
 
@@ -596,24 +593,24 @@
     <div>
       <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Services</h4>
       <ul class="space-y-3 text-gray-400">
-        <li><a href="driving-lessons-kelowna.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Driving Lessons</a></li>
-        <li><a href="road-test-preparation-kelowna.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Road Test Prep</a></li>
-        <li><a href="brush-up-driving-lessons-kelowna.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Brush-Up Lessons</a></li>
+        <li><a href="driving-lessons-kelowna.html" class="hover:text-[#FEBD59] underline underline-offset-4 transition-all">Driving Lessons</a></li>
+        <li><a href="road-test-preparation-kelowna.html" class="hover:text-[#FEBD59] underline underline-offset-4 transition-all">Road Test Prep</a></li>
+        <li><a href="brush-up-driving-lessons-kelowna.html" class="hover:text-[#FEBD59] underline underline-offset-4 transition-all">Brush-Up Lessons</a></li>
       </ul>
     </div>
     <div>
       <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
       <ul class="space-y-3 text-gray-400">
-        <li><a href="blog.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Blog & Tips</a></li>
-        <li><a href="contact.html" class="hover:text-yellow-400 underline underline-offset-4 transition-all">Contact</a></li>
+        <li><a href="blog.html" class="hover:text-[#FEBD59] underline underline-offset-4 transition-all">Blog & Tips</a></li>
+        <li><a href="contact.html" class="hover:text-[#FEBD59] underline underline-offset-4 transition-all">Contact</a></li>
       </ul>
     </div>
     <div>
       <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-xs">Contact</h4>
       <ul class="space-y-3 text-gray-400">
-        <li><i class="fa-solid fa-phone mr-2 text-yellow-400"></i><a href="tel:2503000552" class="hover:text-white transition">(250) 300-0552</a></li>
-        <li><i class="fa-solid fa-envelope mr-2 text-yellow-400"></i><a href="mailto:drive@callecinco.ca" class="hover:text-white transition">drive@callecinco.ca</a></li>
-        <li><i class="fa-solid fa-location-dot mr-2 text-yellow-400"></i>Kelowna, BC</li>
+        <li><i class="fa-solid fa-phone mr-2 text-[#FEBD59]"></i><a href="tel:2503000552" class="hover:text-white transition">(250) 300-0552</a></li>
+        <li><i class="fa-solid fa-envelope mr-2 text-[#FEBD59]"></i><a href="mailto:drive@callecinco.ca" class="hover:text-white transition">drive@callecinco.ca</a></li>
+        <li><i class="fa-solid fa-location-dot mr-2 text-[#FEBD59]"></i>Kelowna, BC</li>
       </ul>
     </div>
   </div>
