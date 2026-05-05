@@ -132,7 +132,7 @@
             </div>
             <div class="hero-mock__visual order-first md:order-none reveal reveal-delay-1">
                 <div class="hero-mock__visual-bg" style="background-image: url('images/driving-school-student-and-instructor.jpg');"></div>
-                <div class="hero-mock__stripe" aria-hidden="true"></div>
+                <div class="hero-mock__edge" aria-hidden="true"></div>
                 <div class="absolute bottom-4 right-4 left-4 md:left-auto md:right-6 md:bottom-8 z-[5] max-w-sm ml-auto md:ml-0 bg-red-700 text-[#FEBD59] rounded-xl px-4 py-3 shadow-2xl flex items-center gap-3 border-2 border-[#FEBD59]">
                     <div class="bg-[#FEBD59] rounded-full p-2 shrink-0">
                         <i class="fa-solid fa-check text-lg text-red-800"></i>
@@ -176,6 +176,34 @@
                     <h2 class="drive-feature__title">High pass rate</h2>
                     <p class="drive-feature__text">The majority of our students pass on their first take—without the stress.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yellow CTA — directly under value bar (mockup) -->
+    <section class="drive-cta-strip reveal">
+        <div class="drive-cta-strip__inner">
+            <div class="drive-cta-strip__left">
+                <div class="drive-cta-strip__icon" aria-hidden="true"><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="drive-cta-strip__copy">
+                    <h2>Ready to get started?</h2>
+                    <p>Book your first lesson today and take the first step toward freedom on the road. Join 200+ students who transformed from anxious beginners to confident drivers—we reply within minutes.</p>
+                </div>
+            </div>
+            <div class="drive-cta-strip__arrow-wrap" aria-hidden="true">
+                <svg class="drive-cta-strip__arrow" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 40C40 16, 85 10, 130 22C145 26, 160 32, 172 40" 
+                          stroke="#111" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                    <path d="M162 30l20 14-8 8" 
+                          stroke="#111" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </div>
+            <div class="drive-cta-strip__right">
+                <a href="contact.html" class="drive-cta-strip__btn">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book your lesson
+                </a>
+                <a href="tel:2503000552" class="drive-cta-strip__phone">Or call (250) 300-0552</a>
             </div>
         </div>
     </section>
@@ -535,26 +563,6 @@
         </div>
     </section>
 
-    <!-- CTA — yellow banner (mockup style) -->
-    <section class="drive-cta-strip reveal">
-        <div class="drive-cta-strip__inner">
-            <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
-                <div class="drive-cta-strip__icon" aria-hidden="true"><i class="fa-solid fa-calendar-days"></i></div>
-                <div class="drive-cta-strip__copy">
-                    <h2>Ready to get started?</h2>
-                    <p>Book your first lesson today and take the first step toward freedom on the road. Join 200+ students who transformed from anxious beginners to confident drivers—we reply within minutes.</p>
-                </div>
-            </div>
-            <div class="flex flex-col items-center gap-3 shrink-0">
-                <a href="contact.html" class="drive-cta-strip__btn">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    Book now
-                </a>
-                <a href="tel:2503000552" class="text-sm font-bold text-neutral-900 hover:underline">Or call (250) 300-0552</a>
-            </div>
-        </div>
-    </section>
-
    <!-- 7. FAQ -->
     <section id="faq" class="section bg-section-dark">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
@@ -662,6 +670,21 @@
   }
 })();
 </script>
-
+<script>
+    (function () {
+      const root = document.documentElement;
+    
+      function updateScroll() {
+        const scrollY = window.scrollY || window.pageYOffset;
+    
+        /* SMALL movement only (premium feel, not gimmicky) */
+        const shift = scrollY * 0.15;
+    
+        root.style.setProperty('--scroll-shift', shift + 'px');
+      }
+    
+      window.addEventListener('scroll', updateScroll, { passive: true });
+    })();
+    </script>
 </body>
 </html>
