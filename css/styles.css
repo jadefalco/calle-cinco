@@ -806,6 +806,7 @@ body.home-hero-mock #navbar .max-w-7xl {
   padding-right: 40px;
   width: 100%;
 }
+
 /* FIX: Center nav links between logo and CTAs */
 body.home-hero-mock #navbar .max-w-7xl {
   display: flex;
@@ -821,7 +822,7 @@ body.home-hero-mock #navbar .max-w-7xl > a:first-child {
 
 /* CTA side — INCREASED flex to pull nav links left */
 body.home-hero-mock #navbar .max-w-7xl > div:last-child {
-  flex: 2 1 0;        /* was 1 — higher number = nav moves more left */
+  flex: 2 1 0;
   min-width: 0;
   display: flex;
   align-items: center;
@@ -835,6 +836,7 @@ body.home-hero-mock #navbar .max-w-7xl > nav.desktop-links {
   flex: 0 0 auto;
   justify-content: center;
 }
+
 /* FIX: Logo stays contained inside the black header */
 body.home-hero-mock .logo-img {
   height: 84px;
@@ -1101,7 +1103,7 @@ body.home-hero-mock .btn-dark {
 
 .hero-mock {
   position: relative;
-   background: linear-gradient(
+  background: linear-gradient(
     180deg,
     #111111 0%,
     #171717 100%
@@ -1109,9 +1111,11 @@ body.home-hero-mock .btn-dark {
   color: white;
   overflow: hidden;
 }
+
 .hero-mock__social {
-  margin-top: 24px;   /* was 0 — adds breathing room below the buttons */
+  margin-top: 24px;
 }
+
 /* GRID */
 .hero-mock__grid {
   display: grid;
@@ -1261,29 +1265,68 @@ body.home-hero-mock .btn-dark {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-/* MOBILE */
+/* ============================================
+   MOBILE FIXES — home-hero-mock only
+   ============================================ */
+
 @media (max-width: 900px) {
+  /* Hero becomes single column */
   .hero-mock__grid {
     grid-template-columns: 1fr;
   }
 
+  /* Text area padding for mobile */
   .hero-mock__copy {
     padding: 100px 24px 60px;
   }
 
+  /* Title wraps naturally on phone */
   .hero-mock__title {
     font-size: 42px;
     white-space: normal;
   }
 
+  /* Buttons stack if too narrow */
+  .hero-mock__actions {
+    flex-wrap: wrap;
+  }
+
+  /* Hero image: clean top edge, no slant */
   .hero-mock__visual {
     position: relative;
     width: 100%;
     height: 300px;
-    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+    clip-path: none;
   }
 
+  /* Stripes hidden on mobile */
   .hero-mock__edge {
     display: none;
+  }
+
+  /* Navbar: smaller logo, tighter padding */
+  body.home-hero-mock #navbar .max-w-7xl {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  body.home-hero-mock .logo-img {
+    height: 56px;
+    max-height: 56px;
+  }
+
+  /* CTA button shrinks so it fits */
+  body.home-hero-mock #navbar .cta-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.65rem;
+  }
+
+  /* Mobile menu drops down properly as overlay */
+  body.home-hero-mock #mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 40;
   }
 }
